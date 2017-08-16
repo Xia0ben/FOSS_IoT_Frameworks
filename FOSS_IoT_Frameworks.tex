@@ -67,7 +67,7 @@ Here are some general criteria that allow us to assess the quality of any FOSS p
 \item Adaptability: Documentation must be adapted to the different users. The more it respects this principle, the better the appreciation.
 \end{itemize}
 
-\paragraph{UI} The software must provide appropriate tools at all levels, be it CLIs or Graphical UIs, depending on the context.
+\paragraph{UI-UX} The software must provide appropriate tools at all levels, be it CLIs or Graphical UIs, depending on the context.
 
 \begin{itemize}
 \item Server Management UI: the more powerful and concise, the better the appreciation.
@@ -85,14 +85,20 @@ Here are some general criteria that allow us to assess the quality of IoT projec
 \item Audits: the more positive reviews about the security are, the better the appreciation. Clues at a good applications of best security practices.
 \end{itemize}
 
-\paragraph{Connectivity/Flexibility}
-
+\paragraph{Connectivity/Flexibility} Is very important for IoT systems, because they are supposed to connect many elements that are all very different.
 
 \begin{itemize}
 \item Number of compatible hardware platforms: The higher, the better. Might clue to a shorter time-to-market.
 \item Number of supported protocols: The higher, the better. Might clue at a will not to lock the user in the system.
 \item Number of SDK implementations: The higher, the better. Might clue at an easier time for in-house developpers to incorporate the solution with their own prefered language.
 \item Modularity: the more the components of the solution can easily be changed (for instance, the DB), the better the appreciation.
+\end{itemize}
+
+\paragraph{Scalability} As IoT systems tend to grow really fast, it is necessary that the application scales by design, and allows for many devices, all over the world, to connect to it, without failure.
+
+\begin{itemize}
+\item Third-Party scalability: IoT solutions are often a combination of many pre-existing FOSS projects. This criteria evaluates whether the 3rd-Party solutions chosen by the IoT platform are capable of scaling: the more they are, the better the appreciation.
+\item Platform scalability: IoT solutions must also be scalable themselves by being capable of being distributed across different machines and still be able to talk to one another smoothly. This criteria evaluates whether the platform is capable of scaling: the more it id, the better the appreciation.
 \end{itemize}
 
 \subsection{Application-specific criteria}
@@ -140,17 +146,17 @@ Good company backing overall, though it's a shame they don't communicate a bit m
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - From the short time spent in the documentation, it seems it has been updated to match the latest release (as its number is written on the documentation homepage), however, in the absence of dating on all pages, it is impossible to say if everything inside has been kept up to date. 
+\item Currentness: \textbf{good} - From the short time spent in the documentation, it seems it has been updated to match the latest release (as its number is written on the documentation homepage), however, in the absence of dating on all pages, it makes it more difficult to say if everything has been updated or not : for that, you have to go to the \href{https://github.com/sitewhere/sitewhere-documentation/}{documentation Github Repository}.
 \item Adaptability: \textbf{excellent} - The documentation is well separated between user and developper use cases. Explanations are clear, with lots of screenshots and appropriate commands where needed. The README.md on the Github Repository is crystal clear. Different levels of documentation are provided, like architecture, technologies, usage, code structure, ...
 \end{itemize}
 
 Good documentation overall, does make you want to use the product.
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - Powerful and well-documented web administration interface, though its design is a little bit old school.
-\item Sample applications: \textbf{good} - There are example applications for ios, android and web, however, no screenshots are provided of those, making the evaluation of their quality difficult. Let's give the benefit of doubt.
+\item Sample applications: \textbf{average} - There are a few example applications for ios, android and webapps but not so many examples for hardware.
 \end{itemize}
 
 The proposed UIs seem good overall, but it would take a deeper examination to fully conclude on their capacity.
@@ -175,6 +181,15 @@ There is no apparent concern about security on their websites, which is certainl
 
 Overall, many connectors available, though seem to be a little weak on the hardware side, and lack of a SdK for Desktop applications.
 
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - Sitewhere offers a choice between MongoDB, Apache HBase and InfluxDB, which are three highly scalable Data Storage Technologies.
+\item Platform scalability: \textbf{non-existent} - It seems a Sitewhere instance has no way to communicate with another and allow load-balancing.
+\end{itemize}
+
+It seems that Sitewhere's scalability claim is only based off the capabilities of its 3rd-parties components.
+
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
@@ -187,7 +202,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - The server is mainly just plain good old Java. Really good !
+\item Server percentage: \textbf{81.8\%} - The server is mainly just plain Java. Exactly what we need.
 \end{itemize}
 
 \subsection{Kaa}
@@ -195,61 +210,86 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \paragraph{Project Health}
 
 \begin{itemize}
-\item First Release Date: 
-\item Latest Release Date: \textbf{2017/06/19} - 
-\item Latest Commit Date: \textbf{2017/06/20} - 
-\item Number of main contributors: \textbf{1} - 
-\item Open issues ratio: \textbf{0.0534653465} - 
+\item First Release Date: \textbf{2014/06/30} - The Kaa Project seems to have been open-sourced from its very beginning.
+\item Latest Release Date: \textbf{2016/10/28} - The latest release dates back to the previous year, and could have us think that the project's activity has significantly dropped.
+\item Latest Commit Date: \textbf{2017/06/31} - Actually, it seems that the project is still very much active, and a \href{https://www.youtube.com/watch?v=PaRSwYIGMG4}{recently posted video} on Youtube shows that they plan to release the 1.0 version during this summer. They seem to have reoriented all of their efforts into documenting/testing the project for the upcoming release.
+\item Number of main contributors: \textbf{10} - There is a reasonable number of main contributors, whose work is rather well-distributed along time. All in all, the project has received contributions from 57 different contributors, which shows a good interest from the IoT community.
+\item Open issues ratio: \textbf{0.0173032153} - A very low ratio, almost equal to zero : over the course of the project, 15893 issues have been opened, and now only 275 remain. It certainly goes to show that they have a proactive behaviour toward bugs. It is to be noted that they don't use Github Issues, but \href{http://jira.kaaproject.org/projects/KAA/issues/}{their own Jira instance}.
 \end{itemize}
+
+Kaa has a very good project health overall, especially since it has reached a point where the team behind it can trustfully say that they are ready for the 1.0 release.
 
 \paragraph{Company backing}
 
 \begin{itemize}
-\item Company Support: \textbf{excellent} - 
-\item Company Adoption: \textbf{good} - 
+\item Company Support: \textbf{good} - The company behind Kaa, \href{https://www.kaaiot.io/}{KaaIoT}, seems to be more committed to corporate rather than community support (\href{https://stackoverflow.com/questions/44330714/why-are-the-questions-about-kaa-basically-not-being-answered}{see this StackOverflow discussion}), especially with the upcoming release.
+\item Company Adoption: \textbf{good} - Given that the company has existed for 3 years, has, acccording to its LinkedIn page, between 51 and 200 employees, and that \href{https://www.kaaiot.io/company/careers/}{they are still recruiting a lot}, we can assume they have definitely found clients to buy one of the many formulas they offer on their corporate website. However, no trace was found on who these clients are.
 \end{itemize}
+
+Kaa is supported by a rather big team, and after 3 years of continued existence, we may assume that its company backing is good.
 
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - 
-\item Adaptability: \textbf{excellent} - 
+\item Currentness: \textbf{good} - It seems like they have well divided and updated the documentation for each version. Though, it has the same problem as Sitewhere : you have to go to the \href{https://github.com/kaaproject/kaa/blob/master/doc/}{repository's documentation folder}.
+\item Adaptability: \textbf{excellent} - The documentation itself is very-well separated by role of the reader. You have everything: administrator, hardware programmer, contributor guides. Each of these offer detailed explanations, with plenty of screenshots and code snippets to help you get started.
 \end{itemize}
 
-\paragraph{UI}
+The overall quality of the documentation is very good, and makes you feel you can easily start using the solution right away.
+
+\paragraph{UI-UX}
 
 \begin{itemize}
-\item Server Management UI: \textbf{good} - 
-\item Sample applications: \textbf{good} - 
+\item Server Management UI: \textbf{good} - From what can be seen in the documentation, the administration UI is simple but complete, with a not so modern look, but we can bet that will be heavily upgraded in version 1.0.
+\item Sample applications: \textbf{excellent} - Kaa offers a plethora of \href{https://github.com/kaaproject/sample-apps}{sample apps} that will help you get started, be it with hardware integration or client (apps) integration.
 \end{itemize}
+
+The user experience is especially good thanks to the many sample applications, and the clearly displayed will the Kaa project has to be extremely compatible.
 
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{average} - 
-\item Audits: \textbf{non-existent} - 
+\item Statements: \textbf{good} - A clear concern for security has been expressed by the CTO of the company in a \href{https://www.kaaproject.org/lets-address-dark-side-iot-tackling-security-community/}{blog post} and is also mentioned in their \href{https://www.kaaproject.org/faq/}{FAQ} and \href{http://docs.kaaproject.org/display/KAA/Endpoint+registration#Endpointregistration-Registrationsecurity}{documentation}. According to these sources, data communication between the components is secured using with 2048bits-RSA encryption and 256bits-AES signing. Apparently, Kaa also ensures secure data storage by enforcing database-level encryption, as well as tenant-level encryption, which is very good practice. In the FAQ, it is also said that Kaa is fault-tolerant, since the data is automatically replicated across the nodes.
+\item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
 \end{itemize}
+
+A clear concern for security is expressed, and some of the measures taken in favor of it are clearly explained. However, no independent security audit of the solution has ever been executed.
 
 \paragraph{Connectivity/Flexibility}
 
+\paragraph{Note:} With the incoming 1.0 version, connectivity and flexibility is apparently about to skyrocket, since according to the \href{https://www.kaaproject.org/apply-for-early-access-to-kaa-1-0-banana-beach/}{Early Access application page}, the platform will turn to a SDK-less, technology independent paradigm, with Out-of-the-box MQTT support.
+
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{4} - 
-\item Number of supported protocols: \textbf{8} - 
-\item Number of SDK implementations: \textbf{2} - 
-\item Modularity: \textbf{good} - 
+\item Number of compatible hardware platforms: \textbf{8} - Kaa provides 8 endpoint SdKs for many popular hardware platforms : RaspberryPi, ESP8266, ...
+\item Number of supported protocols: \textbf{1} - Devices must use Kaa's own protocol (described \href{https://github.com/kaaproject/kaa-rfcs/}{here}), based on MQTT/CoAP. For easy implementation, Kaa provides endpoint SdKs for the many different platforms.
+\item Number of SDK implementations: \textbf{5} - Kaa provides 5 endpoint SdKs for all main OSes : Linux, Android, MacOS, Windows, and finally, a generic SdK written in Java.
+\item Modularity: \textbf{good} - it is already possible to change some components of Kaa pretty easily, for example, MongoDB and Cassandra are both supported as NoSQL DBs, but it is claimed that for the 1.0 version "Every component of the platform can be customized or substituted with 3rd party software".
 \end{itemize}
+
+Kaa overall boasts a very good connectivity and flexibility, and it seems they will pursue in this direction.
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - Kaa offers a choice between two NoSQL DBS, MongoDB and Cassandra, and two SQL DBS, MariaDB and PostgreSQL, which are highly scalable.
+\item Platform scalability: \textbf{excellent} - Kaa has been thought as a cluster of server nodes, and uses Apache ZooKeeper to coordinate services. Kaa also includes load-balancing capabilities. (Cf. its \href{https://kaaproject.github.io/kaa/docs/v0.10.0/Architecture-overview/}{Architecture Overview})
+\end{itemize}
+
+Kaa seems to have been truly been built from the ground-up to be fully distributed.
 
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - 
-\item Boilerplate code: \textbf{good} - 
+\item Library: \textbf{good} - As said before, there is a dedicated SdK for the ESP8266, but not for the NodeMCU especially.
+\item Boilerplate code: \textbf{good} - There is quite a little boilerplate C code, but it is well-explained, and it shouldn't be really too hard to work with it.
 \end{itemize}
+
+Relatively good compatibility with the ESP8266, however, the support for Arduino or NodeMCU is lacking.
 
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - 
+\item Server percentage: \textbf{69.9\%} - Mainly developped in Java (Netty+Spring), almost all of its third party services are written in Java too.
 \end{itemize}
 
 \subsection{Device Hive}
@@ -278,7 +318,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -340,7 +380,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -402,7 +442,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -464,7 +504,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -526,7 +566,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -588,7 +628,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -650,7 +690,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -712,7 +752,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -774,7 +814,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
@@ -836,7 +876,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 \item Adaptability: \textbf{excellent} - 
 \end{itemize}
 
-\paragraph{UI}
+\paragraph{UI-UX}
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - 
