@@ -35,7 +35,7 @@ The context for this document is the need for an IoT server Gateway component fo
 
 \section{Evaluation criteria}
 
-Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than one hour. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent). Rational critics are, of course, welcome.
+Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than two hours. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent). Rational critics are, of course, welcome.
 
 Some of them come from \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{}, and the ones about security have been inspired by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
 
@@ -126,7 +126,7 @@ Here are some specific criteria that are related to the peculiar needs of the OC
 
 \begin{itemize}
 \item First Release Date: The development started in 2010 as a closed source, asset tracking platform. The first open source release happened on \textbf{2014/03/06}. With 7 years of age, it can be assumed it is quite mature and stable.
-\item Latest Release Date: \textbf{2017/06/19} - Still releases new versions as of today.
+\item Latest Release Date: \textbf{2017/06/19} - Still releases new versions as of today. The project has an irregular release cycle, "When it's ready"-Debian-like.
 \item Latest Commit Date: \textbf{2017/06/20} - Work is still ongoing to deliver a new version.
 \item Number of main contributors: \textbf{1} - It seems to be mainly a one-man project, which is a problem. Some other people have contributed little bits of code, but not to the extent the main contributor has.
 \item Open issues ratio: \textbf{0.0534653465} - With 505 issues opened by many various actors (and not just the main contributor as milestones) since the project's arrival on Github, only 27 remain today, which is a very, very good. Excellent reactivity.
@@ -156,7 +156,7 @@ Good documentation overall, does make you want to use the product.
 
 \begin{itemize}
 \item Server Management UI: \textbf{good} - Powerful and well-documented web administration interface, though its design is a little bit old school.
-\item Sample applications: \textbf{average} - There are a few example applications for ios, android and webapps but not so many examples for hardware.
+\item Sample applications: \textbf{good} - There are a few example applications for ios, android and webapps but not so many examples for hardware.
 \end{itemize}
 
 The proposed UIs seem good overall, but it would take a deeper examination to fully conclude on their capacity.
@@ -211,7 +211,7 @@ Quite good Arduino compatibility, but it would really be welcome to have some do
 
 \begin{itemize}
 \item First Release Date: \textbf{2014/06/30} - The Kaa Project seems to have been open-sourced from its very beginning.
-\item Latest Release Date: \textbf{2016/10/28} - The latest release dates back to the previous year, and could have us think that the project's activity has significantly dropped.
+\item Latest Release Date: \textbf{2016/10/28} - The latest release dates back to the previous year, and could have us think that the project's activity has significantly dropped. The project has an irregular release cycle, "When it's ready"-Debian-like.
 \item Latest Commit Date: \textbf{2017/06/31} - Actually, it seems that the project is still very much active, and a \href{https://www.youtube.com/watch?v=PaRSwYIGMG4}{recently posted video} on Youtube shows that they plan to release the 1.0 version during this summer. They seem to have reoriented all of their efforts into documenting/testing the project for the upcoming release.
 \item Number of main contributors: \textbf{10} - There is a reasonable number of main contributors, whose work is rather well-distributed along time. All in all, the project has received contributions from 57 different contributors, which shows a good interest from the IoT community.
 \item Open issues ratio: \textbf{0.0173032153} - A very low ratio, almost equal to zero : over the course of the project, 15893 issues have been opened, and now only 275 remain. It certainly goes to show that they have a proactive behaviour toward bugs. It is to be noted that they don't use Github Issues, but \href{http://jira.kaaproject.org/projects/KAA/issues/}{their own Jira instance}.
@@ -223,7 +223,7 @@ Kaa has a very good project health overall, especially since it has reached a po
 
 \begin{itemize}
 \item Company Support: \textbf{good} - The company behind Kaa, \href{https://www.kaaiot.io/}{KaaIoT}, seems to be more committed to corporate rather than community support (\href{https://stackoverflow.com/questions/44330714/why-are-the-questions-about-kaa-basically-not-being-answered}{see this StackOverflow discussion}), especially with the upcoming release.
-\item Company Adoption: \textbf{good} - Given that the company has existed for 3 years, has, acccording to its LinkedIn page, between 51 and 200 employees, and that \href{https://www.kaaiot.io/company/careers/}{they are still recruiting a lot}, we can assume they have definitely found clients to buy one of the many formulas they offer on their corporate website. However, no trace was found on who these clients are.
+\item Company Adoption: \textbf{average} - Given that the company has existed for 3 years, has, acccording to its LinkedIn page, between 51 and 200 employees, and that \href{https://www.kaaiot.io/company/careers/}{they are still recruiting a lot}, we can assume they have definitely found clients to buy one of the many formulas they offer on their corporate website. However, no trace was found on who these clients are.
 \end{itemize}
 
 Kaa is supported by a rather big team, and after 3 years of continued existence, we may assume that its company backing is good.
@@ -280,7 +280,7 @@ Kaa seems to have been truly been built from the ground-up to be fully distribut
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - As said before, there is a dedicated SdK for the ESP8266, but not for the NodeMCU especially.
+\item Library: \textbf{good} - As said before, there is a dedicated SdK for the ESP8266, but not for the NodeMCU, neither Arduino.
 \item Boilerplate code: \textbf{good} - There is quite a little boilerplate C code, but it is well-explained, and it shouldn't be really too hard to work with it.
 \end{itemize}
 
@@ -297,61 +297,80 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \paragraph{Project Health}
 
 \begin{itemize}
-\item First Release Date: 
-\item Latest Release Date: \textbf{2017/06/19} - 
-\item Latest Commit Date: \textbf{2017/06/20} - 
-\item Number of main contributors: \textbf{1} - 
-\item Open issues ratio: \textbf{0.0534653465} - 
+\item First Release Date: \textbf{2013/09/19} - The first release fo the server software has been made in 2013, though, on the corporate website, the copyright indicates an existence starting in 2012. The project has undergone big changes at its beginning, switching from .NET to Java, according to \href{http://www.techrepublic.com/blog/tablets-in-the-enterprise/devicehive-an-open-source-m2m-development-platform/}{this article}.
+\item Latest Release Date: \textbf{2017/08/04} - The last release is very recent, meaning it still actively supported. The project has an irregular release cycle, "When it's ready"-Debian-like.
+\item Latest Commit Date: \textbf{2017/08/17} - As of the writing of this report, commits are made daily on the development branches: we can thus deduce that the project is still undergoing developments.
+\item Number of main contributors: \textbf{5} - It seems that two of the original contributors of the project do not contribute anymore to the server: maybe they ended up managing it. Anyway, the code base seems rather shared among a few people, which is good. A total of 30 persons have contributed to the project, which means there is a mild interest from the FOSS IoT community.
+\item Open issues ratio: \textbf{0.3434343434} - The project doesn't seem to use Github issues a lot: since its creation on Github, only 99 issues have been created and 34 are still open to this day.
 \end{itemize}
+
+The project seems in overall good health, and still growing.
 
 \paragraph{Company backing}
 
 \begin{itemize}
-\item Company Support: \textbf{excellent} - 
-\item Company Adoption: \textbf{good} - 
+\item Company Support: \textbf{good} - DeviceHive is supported by \href{http://www.dataart.com/}{DataArt}, a company that has, according to \href{https://www.linkedin.com/company/dataart}{LinkedIn}, 1001 to 5000 employees. Community support seems rather weak, with only a \href{https://docs.devicehive.com/discuss}{helpdesk} that doesn't seem to have been of much use (only one message), and the sporadic use of Github issues doesn't clue at a very active community exchange. 
+\item Company Adoption: \textbf{excellent} - DataArt has a \href{http://www.dataart.com/clients/select-clients}{huge list of clients}, and \href{http://www.dataart.com/about-dataart/industry-recognition}{received quite a few awards}, but most of this is not directly linked to DeviceHive, which seems to be only one of their many projects. On their \href{http://www.dataart.com/clients/success-stories}{success stories pages}, there is actually one company that mentions DeviceHive: \href{http://www.interdigital.com/solution/wotio}{Wot.io}.
 \end{itemize}
+
+Overall, DeviceHive has good company backing, though the community aspect of the project seems lacking.
 
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - 
-\item Adaptability: \textbf{excellent} - 
+\item Currentness: \textbf{good} - There is a separate documentation for the older 2.0 and latest 3.3.0 versions, which tends to prove that the documentation is up to date, however, there are no easy means to check the last edition dates since it is not even on Github but on a proprietary service called \href{https://readme.io/}{ReadMe}.
+\item Adaptability: \textbf{average} - There is no separations of roles in the documentation, but rather a collection of categories, which goes directly from the "Getting Started and tutorials" to "Specific technical information". There is no page adressing the global architecture.
 \end{itemize}
 
 \paragraph{UI-UX}
 
 \begin{itemize}
-\item Server Management UI: \textbf{good} - 
-\item Sample applications: \textbf{good} - 
+\item Server Management UI: \textbf{good} - The server management has a beautiful design, and even comes with an integrated tutorial that easily lets you get started. However, it seems it has rather few capabilities (you can only manage three basic tables: networks, devices and JWT tokens, but there is nothing to configure the server graphically).
+\item Sample applications: \textbf{average} - The only client interface provided is a web interface, based on \href{http://freeboard.io/}{FreeBoard}. Nothing for native development. As for sample apps, there is only one for RaspberryPi and one for ESP8266.
 \end{itemize}
 
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{average} - 
-\item Audits: \textbf{non-existent} - 
+\item Statements: \textbf{poor} - No statements on security whatsoever. It is not even clearly documented what they use for authentication, encryption and signing. Nothing on the corporate website, nothing in the documentation, except an API for authentification which means there is something, but that's it.
+\item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
 \end{itemize}
+
+Security is not clearly a concern for the DeviceHive project, which is quite bothering for an IoT project.
 
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{4} - 
-\item Number of supported protocols: \textbf{8} - 
-\item Number of SDK implementations: \textbf{2} - 
-\item Modularity: \textbf{good} - 
+\item Number of compatible hardware platforms: \textbf{2} - Only two platforms have been documented : RaspberryPi and ESP8266.
+\item Number of supported protocols: \textbf{3} - REST API, WebSockets or MQTT. This is the minimum to potentially allow for any kind of device to connect, from OS-enabled ones, to barebone ones.
+\item Number of SDK implementations: \textbf{2} - Python, Node/Javascript. It seems there were many more before (Go, Java,...), but they have now been deprecated.
+\item Modularity: \textbf{poor} - Though DeviceHive is built on top of popular third-party FOSS components (ElasticSearch, Apache Spark, Cassandra and Kafka), no choice is left as to what to use.
 \end{itemize}
+
+The connectivity and flexibility of DeviceHive seems in fact rather poor overall.
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - The scalability of the components named above (ElasticSearch, Apache Spark, Cassandra and Kafka) is very good, as they were all designed for this.
+\item Platform scalability: \textbf{good} - DeviceHive uses a container based service oriented architecture approach, managed and orchestrated by Kubernetes. This takes advantage of the inherent capabilities of Docker, but it is not mentioned how the different DeviceHive instances might interact (as their is no Architecture overview in the documentation!).
+\end{itemize}
+
+The approach DeviceHive takes to scalability definitely is interesting, but also cruely lacks documentation.
 
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - 
-\item Boilerplate code: \textbf{good} - 
+\item Library: \textbf{average} - No Arduino nor NodeMCU libraries, but there is one for the ESP8266.
+\item Boilerplate code: \textbf{good} - Minimal boilerplate code, since it is javascript.
 \end{itemize}
+
+There are some examples with the ESP8266, however they do not seem to cover much.
 
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - 
+\item Server percentage: \textbf{97.2\%} - Almost everything is pure Java, which makes it potentially easily maintainable.
 \end{itemize}
 
 \subsection{Zetta JS}
@@ -401,6 +420,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Number of supported protocols: \textbf{8} - 
 \item Number of SDK implementations: \textbf{2} - 
 \item Modularity: \textbf{good} - 
+\end{itemize}
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
@@ -465,6 +491,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Modularity: \textbf{good} - 
 \end{itemize}
 
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
+\end{itemize}
+
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
@@ -525,6 +558,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Number of supported protocols: \textbf{8} - 
 \item Number of SDK implementations: \textbf{2} - 
 \item Modularity: \textbf{good} - 
+\end{itemize}
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
@@ -589,6 +629,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Modularity: \textbf{good} - 
 \end{itemize}
 
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
+\end{itemize}
+
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
@@ -649,6 +696,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Number of supported protocols: \textbf{8} - 
 \item Number of SDK implementations: \textbf{2} - 
 \item Modularity: \textbf{good} - 
+\end{itemize}
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
@@ -713,6 +767,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Modularity: \textbf{good} - 
 \end{itemize}
 
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
+\end{itemize}
+
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
@@ -773,6 +834,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Number of supported protocols: \textbf{8} - 
 \item Number of SDK implementations: \textbf{2} - 
 \item Modularity: \textbf{good} - 
+\end{itemize}
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
@@ -837,6 +905,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Modularity: \textbf{good} - 
 \end{itemize}
 
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
+\end{itemize}
+
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
@@ -897,6 +972,13 @@ Relatively good compatibility with the ESP8266, however, the support for Arduino
 \item Number of supported protocols: \textbf{8} - 
 \item Number of SDK implementations: \textbf{2} - 
 \item Modularity: \textbf{good} - 
+\end{itemize}
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{excellent} - 
+\item Platform scalability: \textbf{excellent} - 
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
