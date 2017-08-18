@@ -458,74 +458,87 @@ No clear support of Arduino/NodeMCU in ZettaJS.
 \item Server percentage: \textbf{0\%} - ZettaJS, is, as the name indicates, a full JS solution. No Java here.
 \end{itemize}
 
-
 \subsection{Parse}
 
 \paragraph{Project Health}
 
 \begin{itemize}
-\item First Release Date: 
-\item Latest Release Date: \textbf{2017/06/19} - 
-\item Latest Commit Date: \textbf{2017/06/20} - 
-\item Number of main contributors: \textbf{1} - 
-\item Open issues ratio: \textbf{0.0534653465} - 
+\item First Release Date: \textbf{2016/01/28} - The open-source version of the Parse platform has only been released one year ago, when the company behind it \href{http://blog.parse.com/announcements/moving-on/}{decided to close}.
+\item Latest Release Date: \textbf{2017/07/03} - Even though the service closed in January 2017, the project still gets regular releases, the latest one having been made this summer.
+\item Latest Commit Date: \textbf{2017/08/12} - The project is still undergoing changes, though the graphs are pretty clear on the fact that development is winding down.
+\item Number of main contributors: \textbf{2} - Among the 159 contributors, the project is actually only developed by two persons. Although, there are 34 pull requests waiting for integration, and the many forks (over 3000 thousands) indicate that quite a few people are interested in keeping the project afloat.
+\item Open issues ratio: \textbf{0.0742424242} - With 2640 issues created since the project's creatino, and only 196 remaining open today, it is an overall very good ratio, that shows that there is a real interaction with the community, and great reactivity.
 \end{itemize}
+
+It's hard to give an overall appreciation of the project's health. Indeed, one could be tempted to dismiss it as something that is just about to become abandonware, but the seemingly big community around it might keep it going properly.
 
 \paragraph{Company backing}
 
 \begin{itemize}
-\item Company Support: \textbf{excellent} - 
-\item Company Adoption: \textbf{good} - 
+\item Company Support: \textbf{poor} - Since the company behind the project seems to have kind of dropped it, there is no longer company support. The community seems however relatively active on \href{https://stackoverflow.com/tags/parse.com}{StackOverflow} and \href{https://github.com/parse-community/parse-server/issues}{Github Issues}. An unofficial user community website has \href{http://parseopensource.github.io/}{also been created}.
+\item Company Adoption: \textbf{good} - It seems quite a number of \href{https://www.quora.com/What-apps-are-built-on-Parse}{companies were using Parse} as a service before, and it is very likely that they simply migrated to the open source version for many of them. Especially most of the community projects around parse are maintained by \href{https://github.com/modernistik}{other companies}.
 \end{itemize}
+
+It seems that Parse is now mainly a community-governed project, meaning no easy way to get paid support. However, community support seems reactive.
 
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - 
-\item Adaptability: \textbf{excellent} - 
+\item Currentness: \textbf{good} - It seems that the documentation has been well kept to date, with most pages having been edited in april/may 2017.
+\item Adaptability: \textbf{good} - There is a separate wiki for \href{https://github.com/parse-community/parse-server/wiki}{developers} that might want to contribute and \href{http://docs.parseplatform.org/}{users}.
 \end{itemize}
 
 \paragraph{UI-UX}
 
 \begin{itemize}
-\item Server Management UI: \textbf{good} - 
-\item Sample applications: \textbf{good} - 
+\item Server Management UI: \textbf{good} - The project includes a \href{https://github.com/parse-community/parse-dashboardweb}{dashboard}, which looks pretty neat, with a \href{http://blog.parse.com/announcements/introducing-the-parse-server-dashboard/}{Data browser and an API console}. However, it seems that some functionnalities from the ancient Dashboard of Parse.com have not been integrated in the new one, and won't ever be, like \href{http://docs.parseplatform.org/parse-server/guide/#compatibility-with-parsecom}{Analytics}, since they are no longer supported by Parse itself.
+\item Sample applications: \textbf{good} - There is one \href{https://github.com/parse-community/parse-server-example}{repository} that has been kept up to date with an example application and some IoT-specific examples can be found in the \href{https://github.com/parse-community/Parse-SDK-Arduino}{Parse SDK for Arduino repository}, and some other examples can be found \href{http://teachmetomake.com/wordpress/arduinocloudparsetutorial}{on the web}.
 \end{itemize}
+
+The overall UI-UX is pretty fine, with many resources that are rather easy to find.
 
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{average} - 
-\item Audits: \textbf{non-existent} - 
+\item Statements: \textbf{good} - It seems that Parse is taking the subject of security rather seriously, are there are still \href{https://github.com/parse-community/parse-server/issues?utf8=\%E2\%9C\%93&q=is\%3Aissue\%20is\%3Aopen\%20security}{discussions on how to improve} it. Parse uses Application Keys for \href{http://docs.parseplatform.org/parse-server/guide/#using-parse-sdks-with-parse-server}{devicec authentication}, but other client-side keys can also be added. They also give \href{http://docs.parseplatform.org/rest/guide/#security}{very detailed instructions} on how to properly implement security in applications using the tools they provide.
+\item Audits: \textbf{non-existent} - There are no traces of a proper audit of the Parse Platform, but some users did \href{https://groups.google.com/forum/#!topic/parse-developers/qjvKJYikHQ8}{voice concerns} about the Parse's security model, which have been adressed at the time.
 \end{itemize}
+
+Parse clearly voice their concern for security, however, there is no trace of an audit to confirm the good application of these principles.
 
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{4} - 
-\item Number of supported protocols: \textbf{8} - 
-\item Number of SDK implementations: \textbf{2} - 
-\item Modularity: \textbf{good} - 
+\item Number of compatible hardware platforms: \textbf{3} - Arduino Yún, Unix-based, and RTOS platforms are supported by two projects: \href{https://github.com/parse-community/parse-embedded-sdks}{Parse Embedded SDK} and \href{https://github.com/parse-community/Parse-SDK-Arduino}{Parse SDK Arduino}.
+\item Number of supported protocols: \textbf{1} - Everything is done through a REST HTTP API.
+\item Number of SDK implementations: \textbf{7} - iOS, Android, Javascript, .NET + Xamarin, MacOS, Unity, PHP, there are many ways to easily inter-connect with Parse. There are also some experimental or community-initiated SdK implementations, like \href{https://github.com/parse-community/Parse-Swift}{Parse-Swift} or \href{https://github.com/modernistik/parse-stack}{a Ruby client}.
+\item Modularity: \textbf{average} - The project is tightly tied to NodeJS and MongoDB, and it take more than just a little work to get it working with other components.
 \end{itemize}
+
+The overall connectivity-flexiblity is good, but more client-focused than hardware-focused.
 
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - 
-\item Platform scalability: \textbf{excellent} - 
+\item Third-Party scalability: \textbf{good} - NodeJS and MongoDB are two technologies that are known for their capacity to scale.
+\item Platform scalability: \textbf{average} - It doesn't seem like any sort of inter-instance communication has been devised, nor is there any integrated load-balancing.
 \end{itemize}
+
+Parse looks like it could scale rather well if only it would integrate clear instructions on how to use several Parse servers.
 
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - 
-\item Boilerplate code: \textbf{good} - 
+\item Library: \textbf{average} - Efficient implementation, and easily imported. However it is only for the Arduino Yun, and not for the NodeMCU or ESP8266 and would require some adpatations.
+\item Boilerplate code: \textbf{good} - Rather straight-forward boilerplate code, with detailed instructions both in the code and in the wiki.
 \end{itemize}
+
+There is an Arduino compatibility, however, it sadly only covers linux-enabled devices like the Yun.
 
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - 
+\item Server percentage: \textbf{0\%} - This is a full JS solution, no Java here.
 \end{itemize}
 
 \subsection{Blynk}
