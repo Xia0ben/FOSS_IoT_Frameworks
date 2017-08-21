@@ -21,8 +21,6 @@
 
 \maketitle
 
-\newpage
-
 \tableofcontents
 
 \newpage
@@ -35,7 +33,7 @@ The context for this document is the need for an IoT middleware platform for bui
 
 \section{Evaluation criteria}
 
-Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than two hours. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent). Rational critics are, of course, welcome.
+Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than three hours. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent). Rational critics are, of course, welcome.
 
 Some of them come from \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{}, and the ones about security have been inspired by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
 
@@ -263,7 +261,7 @@ A clear concern for security is expressed, and some of the measures taken in fav
 \item Number of compatible hardware platforms: \textbf{8} - Kaa provides 8 endpoint SdKs for many popular hardware platforms : RaspberryPi, ESP8266, ...
 \item Number of supported protocols: \textbf{1} - Devices must use Kaa's own protocol (described \href{https://github.com/kaaproject/kaa-rfcs/}{here}), based on MQTT/CoAP. For easy implementation, Kaa provides endpoint SdKs for the many different platforms.
 \item Number of SDK implementations: \textbf{5} - Kaa provides 5 endpoint SdKs for all main OSes : Linux, Android, MacOS, Windows, and finally, a generic SdK written in Java.
-\item Modularity: \textbf{good} - it is already possible to change some components of Kaa pretty easily, for example, MongoDB and Cassandra are both supported as NoSQL DBs, but it is claimed that for the 1.0 version "Every component of the platform can be customized or substituted with 3rd party software".
+\item Modularity: \textbf{excellent} - it is already possible to change some components of Kaa pretty easily, for example, MongoDB and Cassandra are both supported as NoSQL DBs, but it is claimed that for the 1.0 version "Every component of the platform can be customized or substituted with 3rd party software".
 \end{itemize}
 
 Kaa overall boasts a very good connectivity and flexibility, and it seems they will pursue in this direction.
@@ -344,7 +342,7 @@ Security is not clearly a concern for the DeviceHive project, which is quite bot
 \item Number of compatible hardware platforms: \textbf{2} - Only two platforms have been documented : RaspberryPi and ESP8266.
 \item Number of supported protocols: \textbf{3} - REST API, WebSockets or MQTT. This is the minimum to potentially allow for any kind of device to connect, from OS-enabled ones, to barebone ones.
 \item Number of SDK implementations: \textbf{2} - Python, Node/Javascript. It seems there were many more before (Go, Java,...), but they have now been deprecated.
-\item Modularity: \textbf{poor} - Though DeviceHive is built on top of popular third-party FOSS components (ElasticSearch, Apache Spark, Cassandra and Kafka), no choice is left as to what to use.
+\item Modularity: \textbf{average} - Though DeviceHive is built on top of popular third-party FOSS components (ElasticSearch, Apache Spark, Cassandra and Kafka), no choice is left as to what to use.
 \end{itemize}
 
 The connectivity and flexibility of DeviceHive seems in fact rather poor overall.
@@ -512,7 +510,7 @@ Parse clearly voice their concern for security, however, there is no trace of an
 \item Number of compatible hardware platforms: \textbf{3} - Arduino Yún, Unix-based, and RTOS platforms are supported by two projects: \href{https://github.com/parse-community/parse-embedded-sdks}{Parse Embedded SDK} and \href{https://github.com/parse-community/Parse-SDK-Arduino}{Parse SDK Arduino}.
 \item Number of supported protocols: \textbf{1} - Everything is done through a REST HTTP API.
 \item Number of SDK implementations: \textbf{7} - iOS, Android, Javascript, .NET + Xamarin, MacOS, Unity, PHP, there are many ways to easily inter-connect with Parse. There are also some experimental or community-initiated SdK implementations, like \href{https://github.com/parse-community/Parse-Swift}{Parse-Swift} or \href{https://github.com/modernistik/parse-stack}{a Ruby client}.
-\item Modularity: \textbf{average} - The project is tightly tied to NodeJS and MongoDB, and it take more than just a little work to get it working with other components.
+\item Modularity: \textbf{poor} - The project is tightly tied to NodeJS and MongoDB, and it take more than just a little work to get it working with other components.
 \end{itemize}
 
 The overall connectivity-flexiblity is good, but more client-focused than hardware-focused.
@@ -652,51 +650,61 @@ Kapua is backed-up by big names of the digital industry, which is reassuring for
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - 
-\item Adaptability: \textbf{excellent} - 
+\item Currentness: \textbf{average} - Since the project is very recent, we can assume that the documentation cannot have gotten far behind. Actually, according to the repository, the latest documentation modifications date back one month. Features like the Server Management UI are not in the documentation, so we can guess that this documentation may be lacking. On another note, what is especially pleasing about this documentation is its very powerful and good-looking display allowed by \href{https://www.gitbook.com/}{GitBook}.
+\item Adaptability: \textbf{average} - The \href{http://download.eclipse.org/kapua/docs/develop/user-manual/en/}{user guide} and \href{http://download.eclipse.org/kapua/docs/develop/developer-guide/en/}{developer guide} are well-separated. There is even a separate \href{https://www.eclipse.org/kapua/getting-started.php}{Getting Started page}. However, in the end, almost only the developer guide is truly interesting, since the user guide is very poor.
 \end{itemize}
+
+Overall, we can assume that the not-so-good documentation is the result of young age of the project.
 
 \paragraph{UI-UX}
 
 \begin{itemize}
-\item Server Management UI: \textbf{good} - 
-\item Sample applications: \textbf{good} - 
+\item Server Management UI: \textbf{average} - From the very little we can see on the \href{https://www.eclipse.org/kapua/getting-started.php}{Getting Started page}, it seems there is such a tool, though it seems it is just an old interface originally developed by Eurotech (see copyright 2001-2006 at the bottom of the screenshot), and it is not mentioned in the documentation.
+\item Sample applications: \textbf{poor} - There seem to be a provided \href{http://download.eclipse.org/kapua/docs/develop/user-manual/en/simulator.html}{Kura simulator}, but by no means can this be considered a sample application, rather a development tool. There is also a mention of a "heater app" on the Getting Started page, but it is unclear as to where to find it, and what it does.
 \end{itemize}
+
+Expectedly, since the project is rather recent, its UI-UX is rather poor overall. However, since the project is still under heavy development, we ca only expect it to get better.
 
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{average} - 
-\item Audits: \textbf{non-existent} - 
+\item Statements: \textbf{average} - The only mentions of the security procedures the project has deployed are on the \href{http://download.eclipse.org/kapua/docs/develop/user-manual/en/jwt_security.html}{JWT Security documentation page}. This merely hints at the use of encryption, but no details as to how it is enforced is given. A good point is that, thanks to the fact it is an Eclipse project, a proper \href{https://github.com/eclipse/kapua/issues}{contact form for reporting security issues} is provided.
+\item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
 \end{itemize}
 
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{4} - 
-\item Number of supported protocols: \textbf{8} - 
-\item Number of SDK implementations: \textbf{2} - 
-\item Modularity: \textbf{good} - 
+\item Number of compatible hardware platforms: \textbf{1} - Linux-based and \href{https://www.eclipse.org/kura/}{Kura}-Enabled hardware seems to be the only kind of compatible hardware. This includes the well-known RaspberryPi or BeagleBones. 
+\item Number of supported protocols: \textbf{1} - It seems that currently, Kapua is only supposed to connect to MQTT-Kura enabled devices. Actually, the framework seems highly coupled with this other project.
+\item Number of SDK implementations: \textbf{0} - No SDK of any sort has been found. 
+\item Modularity: \textbf{poor} - It seems that aside from being able to switch between two database systems, MariaDB or H2 SQL Server, the project is rather monolithic, and does seem easy to fiddle with.
 \end{itemize}
+
+In the end, it seems that Kapua is far from complete, and its overall adaptability is rather poor.
 
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - 
-\item Platform scalability: \textbf{excellent} - 
+\item Third-Party scalability: \textbf{average} - Apart from the databases, the docker images are appreciated, but that's it.
+\item Platform scalability: \textbf{poor} - There doesn't seem to be any effort geared toward scalability (the key-word doesn't even appear on the project's corporate page), no load-balancing, no data/computation distribution,...
 \end{itemize}
+
+Kapua doesn't seem to particularly shine in terms of scalability.
 
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - 
-\item Boilerplate code: \textbf{good} - 
+\item Library: \textbf{non-existent} - There is no support for Arduino/NodeMCU/ESP8266 whatsoever.
+\item Boilerplate code: \textbf{non-existent} - Thus no boilerplate code.
 \end{itemize}
+
+Kapua has bo support for Arduino/NodeMCU/ESP8266 at all.
 
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - 
+\item Server percentage: \textbf{91.8\%} - Thanks to its status as an Eclipse project, Kapua is almost fully written in Java.
 \end{itemize}
 
 \subsection{NodeRed}
