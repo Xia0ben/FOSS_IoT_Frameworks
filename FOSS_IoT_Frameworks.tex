@@ -185,7 +185,7 @@ Overall, many connectors available, though seem to be a little weak on the hardw
 
 \begin{itemize}
 \item Third-Party scalability: \textbf{excellent} - Sitewhere offers a choice between MongoDB, Apache HBase and InfluxDB, which are three highly scalable Data Storage Technologies.
-\item Platform scalability: \textbf{non-existent} - It seems a Sitewhere instance has no way to communicate with another and allow load-balancing.
+\item Platform scalability: \textbf{poor} - It seems a Sitewhere instance has no way to communicate with another and allow load-balancing.
 \end{itemize}
 
 It seems that Sitewhere's scalability claim is only based off the capabilities of its 3rd-parties components.
@@ -429,7 +429,7 @@ ZettaJS doesn't express much concerns about security, though it is a key element
 \item Number of compatible hardware platforms: \textbf{11} - This is hard number to estimate since Zetta rather use a generic concept of "Driver" for any kind of connection. From the \href{http://www.zettajs.org/modules/}{official driver list}, the following harware platforms have been spotted: Wemo, Sphero, Spark, BeagleBone, Pinoccio, Pebble, OpenXC, RaspberryPi, XiaoMi, Intel Edison, Google Glass.
 \item Number of supported protocols: \textbf{1} - ZettaJS seems to only understand HTTP requests, though it claims it should be able to bridge other protocols to it, but we couldn't find any such example.
 \item Number of SDK implementations: \textbf{1} - There is only a \href{https://github.com/zettajs/ZettaKit}{native SDK for IOS}.
-\item Modularity: \textbf{excellent} - As everything is API, any component can be added/changed/removed easily.
+\item Modularity: \textbf{good} - As everything is API, any component can conceptually be added/changed/removed easily.
 \end{itemize}
 
 The API-driven ideology seems to make connexion to the system very easy, but in fact, to this day, there seem to be no easy way to connect devices that don't run a linux kernel on them.
@@ -521,7 +521,7 @@ The overall connectivity-flexiblity is good, but more client-focused than hardwa
 
 \begin{itemize}
 \item Third-Party scalability: \textbf{good} - NodeJS and MongoDB are two technologies that are known for their capacity to scale.
-\item Platform scalability: \textbf{average} - It doesn't seem like any sort of inter-instance communication has been devised, nor is there any integrated load-balancing.
+\item Platform scalability: \textbf{poor} - It doesn't seem like any sort of inter-instance communication has been devised, nor is there any integrated load-balancing.
 \end{itemize}
 
 Parse looks like it could scale rather well if only it would integrate clear instructions on how to use several Parse servers.
@@ -563,6 +563,91 @@ The project seems very healthy overall, if we overlook the fact that only two de
 \end{itemize}
 
 Even though the team at Blynk doesn't seem to be very large, they actually look like they offer a very convincing company backing for their product.
+
+\paragraph{Documentation}
+
+\begin{itemize}
+\item Currentness: \textbf{average} - It seems the documentation is not very actively maintained, since most of its pages have \\href{https://github.com/blynkkk/blynkkk.github.io}{not been updated for months} at least. Often, it must be completed by reading the forum like this \href{https://community.blynk.cc/t/solved-issues-installing-and-running-blynk-client-on-rpi/11196/12}{forum post testifies}. Though the community is very active, it doesn't contribute to the documentation directly, and the afore-mentioned answers do not end up being added to it.
+\item Adaptability: \textbf{good} - Blynk is clearly geared toward the hacker/DIY market. Thus, their documentation reflects this, being more developer-oriented. However, the presentation sections are very understandable for anyone, and are well-separated from tutorials and technical matters. A for server administration, all the information can be found on the \href{https://github.com/blynkkk/blynk-server#requirements}{server's repository README.MD}.
+\end{itemize}
+
+Rather fine documentation, however, the lack of direct contributions from the community is a shame, since it is very active, and many posts on the forum would deserve to be properly transformed into documentation.
+
+\paragraph{UI-UX}
+
+\begin{itemize}
+\item Server Management UI: \textbf{average} - The \href{https://github.com/blynkkk/blynk-server#administration-ui}{Administration UI} offers somewhat the same functionnalities as the other solutions, though not as complete as what you would have with Parse or Kaa. The design is simple and minimalist.
+\item Sample applications: \textbf{good} - The provided Blynk app is excellent in terms of functionnalities, and this part would have deserved an "excellent" mention if and only if there also were less functionnal open-source client apps provided. 
+\end{itemize}
+
+Good UI-UX experience overall, especially considering the great phone app.
+
+\paragraph{Security} 
+
+\begin{itemize}
+\item Statements: \textbf{average} - While the corporate website doesn't mention security much, the \href{http://docs.blynk.cc/#security}{documentation} actually provide a few details as of the security measures taken by the platform, including authentication and end-to-end encryption.
+\item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
+\end{itemize}
+
+While the project seems to take security in consideration, this is apparently not their main concern, as they sometimes suggest reducing it, which is certainly not a good idea, especially if the connected devices are actuators.
+
+\paragraph{Connectivity/Flexibility}
+
+\begin{itemize}
+\item Number of compatible hardware platforms: \textbf{4OO+} - According to \href{https://github.com/blynkkk/blynkkk.github.io/blob/master/SupportedHardware.md}{this list}, The project is compatible with about just any hardware platform !
+\item Number of supported protocols: \textbf{2} - Blynk only speaks the \href{https://github.com/blynkkk/blynk-server#blynk-protocol}{Blynk protocol} and HTTP, which are completely defined \href{https://github.com/blynkkk/blynk-library/blob/master/src/Blynk/BlynkProtocolDefs.h}{here for the custom protocol} and \href{http://docs.blynkapi.apiary.io/#reference/0/qr-for-project-cloning}{here for HTTP}. Potentially, this can be extended through a \href{https://github.com/tzapu/node-red-contrib-blynk-websockets}{bridge to Nodered}, which brings in support for other protocols like MQTT, or XMPP.
+\item Number of SDK implementations: \textbf{2} - iOS and Android apps are the only two SDK available at the moment. No official web implementation, nor desktop at the moment. It is to be reminded that these client apps \textbf{are not open-source}, and trying to use Blynk without them might be kind of a pain.
+\item Modularity: \textbf{poor} - To this date, there is no componentization of Blynk-Server: it is just one big standalone, and most of the data isn't actually stored in it, it actually acts more like a bridge between the sensors and the app. If we want to store the raw data, two possibilities are offered: PostgreSQL and .csv files, but no way to leverage this stored data seems to be provided at the moment.
+\end{itemize}
+
+Overall, the connectivity/flexibility advantage of Blynk is solely assured by its hardware compatibility. When it comes to SDKs or modularity, this is definitely not the case.
+
+\paragraph{Scalability}
+
+\begin{itemize}
+\item Third-Party scalability: \textbf{average} - PostgreSQL is definitely capable of scaling, however, since the app does not take advantage of it, its interest stays limited.
+\item Platform scalability: \textbf{poor} - There si no apparent way to distribute data storage, or any integrated load-balancing between server instances.
+\end{itemize}
+
+The scalability of Blynk seems rather limited, at least for the local version. Since on the official website, they claim that their Blynk Cloud Server handles 21 Billion+ requests per month, they must have devised of a way to scale their server application, but it is unclear how.
+
+\paragraph{Arduino/NodeMCU compatibility}
+
+\begin{itemize}
+\item Library: \textbf{excellent} - The \href{https://github.com/blynkkk/blynk-library}{provided library} is highly complete, with the highest degree of arduino-compatibility around here. There is also everything needed for the NodeMCU and ESP8266.
+\item Boilerplate code: \textbf{excellent} - Minimalist and powerful, many examples are given for just about any platform: the library takes care of almost everything.
+\end{itemize}
+
+Blynk boasts the best hardware compatibility out there, and such an ease of integration is simply found in none of the other projects.
+
+\paragraph{Java} 
+
+\begin{itemize}
+\item Server percentage: \textbf{96.9\%} - This is a fully java-driven server, the other traces of code are HTML and CSS, which do not quite count.
+\end{itemize}
+
+\subsection{Kapua}
+
+\paragraph{Project Health}
+
+\begin{itemize}
+\item First Release Date: \textbf{2017/04/28} - The Kapua project is extremely recent, in comparison to the others that all more or less started in 2013/2014. It started in 2016 as part of the Eclipse IoT ecosystem, according to the date of the first commit.
+\item Latest Release Date: \textbf{2017/08/11} - This date doesn't mean much since it is only the second release of the project, and that it is still in its early beginnings.
+\item Latest Commit Date: \textbf{2017/08/21} - The project is currently under very heavy development. New commits are added every day.
+\item Number of main contributors: \textbf{8} - The project is maintained by approximately 8 persons, which makes for a decent number of people.
+\item Open issues ratio: \textbf{0.335243553} - The high ratio is easily explained by the novel character of the project. What is interesting however is that it is not just people that are working on the project who post issues, but there seem to be a few users already, too.
+\end{itemize}
+
+The project has just been born, and from what we can see, it is clearly going at a steady pace and growing rapidly.
+
+\paragraph{Company backing}
+
+\begin{itemize}
+\item Company Support: \textbf{good} - Kapua is supported by three big names : RedHat, Eurotech and Bosch. Redhat, for one, is a very well-known figure of the FOSS world. Of course, the project is also sponsored by the Eclipse Foundation, giving it even more credibility. Support is apparently mainly provided through \href{https://github.com/eclipse/kapua/issues}{the project's Github issues}, and the staff seems quite reactive to such queries. The community is also active on a \href{https://www.eclipse.org/forums/index.php/f/340/}{forum} and a \href{https://dev.eclipse.org/mailman/listinfo/kapua-dev}{mailing-list}. Though, it doesn't look like they have an active dedicated support line like the many projects that were named before.
+\item Company Adoption: \textbf{good} - It seems that the main goal of the companies behind Kapua (along with its sister projects Hono and Kura, is for it to be used internally for all of their IoT projects. Apart from these companies, at the moment, it doesn't seem there are external customers using Kura.
+\end{itemize}
+
+Kapua is backed-up by big names of the digital industry, which is reassuring for the future of the project.
 
 \paragraph{Documentation}
 
@@ -614,7 +699,7 @@ Even though the team at Blynk doesn't seem to be very large, they actually look 
 \item Server percentage: \textbf{81.8\%} - 
 \end{itemize}
 
-\subsection{Kapua}
+\subsection{NodeRed}
 
 \paragraph{Project Health}
 
