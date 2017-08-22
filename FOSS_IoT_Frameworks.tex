@@ -168,7 +168,7 @@ Good company backing overall, though it's a shame they don't communicate a bit m
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - From the short time spent in the documentation, it seems it has been updated to match the latest release (as its number is written on the documentation homepage), however, in the absence of dating on all pages, it makes it more difficult to say if everything has been updated or not : for that, you have to go to the \href{https://github.com/sitewhere/sitewhere-documentation/}{documentation Github Repository}.
+\item Currentness: \textbf{good} - From the short time spent in the documentation, it seems it has been updated to match the latest release (as its number is written on the documentation homepage), however, in the absence of dating on all pages, it makes it more difficult to say if everything has been updated or not : for that, you have to go to the \href{https://github.com/sitewhere/sitewhere-documentation/}{documentation Github Repository}, which turns out to show that the documentation is rather up to date, since the oldest modifications are three month old.
 \item Adaptability: \textbf{excellent} - The documentation is well separated between user and developper use cases. Explanations are clear, with lots of screenshots and appropriate commands where needed. The README.md on the Github Repository is crystal clear. Different levels of documentation are provided, like architecture, technologies, usage, code structure, ...
 \end{itemize}
 
@@ -201,12 +201,12 @@ There is no apparent concern about security on their websites, which is certainl
 \item Modularity: \textbf{good} - Design built out of preexisting opensource components. DB apparently easily changeable between MongoDB and Apache HBase (Cf. \href{http://documentation.sitewhere.io/architecture.html}{dedicated documentation page})
 \end{itemize}
 
-Overall, many connectors available, though seem to be a little weak on the hardware side, and lack of a SdK for Desktop applications.
+Overall, many connectors available, though seem to be a little weak on the hardware side, and lack of a SDK for Desktop applications.
 
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - Sitewhere offers a choice between MongoDB, Apache HBase and InfluxDB, which are three highly scalable Data Storage Technologies.
+\item Third-Party scalability: \textbf{good} - Sitewhere offers a choice between MongoDB, Apache HBase and InfluxDB, which are three highly scalable Data Storage Technologies.
 \item Platform scalability: \textbf{poor} - It seems a Sitewhere instance has no way to communicate with another and allow load-balancing.
 \end{itemize}
 
@@ -253,7 +253,7 @@ Kaa is supported by a rather big team, and after 3 years of continued existence,
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - It seems like they have well divided and updated the documentation for each version. Though, it has the same problem as Sitewhere : you have to go to the \href{https://github.com/kaaproject/kaa/blob/master/doc/}{repository's documentation folder}.
+\item Currentness: \textbf{good} - It seems like they have well divided and updated the documentation for each version. Though, it has the same little problem as Sitewhere : you have to go to the \href{https://github.com/kaaproject/kaa/blob/master/doc/}{repository's documentation folder} to check the last edition dates since they are not displayed on the website's pages.
 \item Adaptability: \textbf{excellent} - The documentation itself is very-well separated by role of the reader. You have everything: administrator, hardware programmer, contributor guides. Each of these offer detailed explanations, with plenty of screenshots and code snippets to help you get started.
 \end{itemize}
 
@@ -271,7 +271,7 @@ The user experience is especially good thanks to the many sample applications, a
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{good} - A clear concern for security has been expressed by the CTO of the company in a \href{https://www.kaaproject.org/lets-address-dark-side-iot-tackling-security-community/}{blog post} and is also mentioned in their \href{https://www.kaaproject.org/faq/}{FAQ} and \href{http://docs.kaaproject.org/display/KAA/Endpoint+registration#Endpointregistration-Registrationsecurity}{documentation}. According to these sources, data communication between the components is secured using with 2048bits-RSA encryption and 256bits-AES signing. Apparently, Kaa also ensures secure data storage by enforcing database-level encryption, as well as tenant-level encryption, which is very good practice. In the FAQ, it is also said that Kaa is fault-tolerant, since the data is automatically replicated across the nodes.
+\item Statements: \textbf{excellent} - A clear concern for security has been expressed by the CTO of the company in a \href{https://www.kaaproject.org/lets-address-dark-side-iot-tackling-security-community/}{blog post} and is also mentioned in their \href{https://www.kaaproject.org/faq/}{FAQ} and \href{http://docs.kaaproject.org/display/KAA/Endpoint+registration#Endpointregistration-Registrationsecurity}{documentation}. According to these sources, data communication between the components is secured using with 2048bits-RSA encryption and 256bits-AES signing. Apparently, Kaa also ensures secure data storage by enforcing database-level encryption, as well as tenant-level encryption, which is very good practice. In the FAQ, it is also said that Kaa is fault-tolerant, since the data is automatically replicated across the nodes.
 \item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
 \end{itemize}
 
@@ -279,21 +279,21 @@ A clear concern for security is expressed, and some of the measures taken in fav
 
 \paragraph{Connectivity/Flexibility}
 
-\paragraph{Note:} With the incoming 1.0 version, connectivity and flexibility is apparently about to skyrocket, since according to the \href{https://www.kaaproject.org/apply-for-early-access-to-kaa-1-0-banana-beach/}{Early Access application page}, the platform will turn to a SDK-less, technology independent paradigm, with Out-of-the-box MQTT support.
+\paragraph{Note:} With the upcoming 1.0 version, connectivity and flexibility is apparently about to skyrocket, since according to the \href{https://www.kaaproject.org/apply-for-early-access-to-kaa-1-0-banana-beach/}{Early Access application page}, the platform will turn to a SDK-less, technology independent paradigm, with Out-of-the-box MQTT support.
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{8} - Kaa provides 8 endpoint SdKs for many popular hardware platforms : RaspberryPi, ESP8266, ...
-\item Number of supported protocols: \textbf{1} - Devices must use Kaa's own protocol (described \href{https://github.com/kaaproject/kaa-rfcs/}{here}), based on MQTT/CoAP. For easy implementation, Kaa provides endpoint SdKs for the many different platforms.
-\item Number of SDK implementations: \textbf{5} - Kaa provides 5 endpoint SdKs for all main OSes : Linux, Android, MacOS, Windows, and finally, a generic SdK written in Java.
+\item Number of compatible hardware platforms: \textbf{8} - Kaa provides 8 endpoint SDK for many popular hardware platforms : RaspberryPi, ESP8266, ...
+\item Number of supported protocols: \textbf{1} - Devices must use Kaa's own protocol (described \href{https://github.com/kaaproject/kaa-rfcs/}{here}), based on MQTT/CoAP. For easy implementation, Kaa provides many endpoint SDK for the different platforms.
+\item Number of SDK implementations: \textbf{5} - Kaa provides 5 endpoint SDK for all main OSes : Linux, Android, MacOS, Windows, and finally, a generic SDK written in Java.
 \item Modularity: \textbf{excellent} - it is already possible to change some components of Kaa pretty easily, for example, MongoDB and Cassandra are both supported as NoSQL DBs, but it is claimed that for the 1.0 version "Every component of the platform can be customized or substituted with 3rd party software".
 \end{itemize}
 
-Kaa overall boasts a very good connectivity and flexibility, and it seems they will pursue in this direction.
+Kaa overall boasts a very good connectivity and flexibility, and it seems they will continue in this direction.
 
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - Kaa offers a choice between two NoSQL DBS, MongoDB and Cassandra, and two SQL DBS, MariaDB and PostgreSQL, which are highly scalable.
+\item Third-Party scalability: \textbf{excellent} - Kaa offers a choice between two NoSQL DBS, MongoDB and Cassandra, and two SQL DBS, MariaDB and PostgreSQL, which are highly scalable, and all its other components, like Spark, are made for scalability.
 \item Platform scalability: \textbf{excellent} - Kaa has been thought as a cluster of server nodes, and uses Apache ZooKeeper to coordinate services. Kaa also includes load-balancing capabilities. (Cf. its \href{https://kaaproject.github.io/kaa/docs/v0.10.0/Architecture-overview/}{Architecture Overview})
 \end{itemize}
 
@@ -302,7 +302,7 @@ Kaa seems to have been truly been built from the ground-up to be fully distribut
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - As said before, there is a dedicated SdK for the ESP8266, but not for the NodeMCU, neither Arduino.
+\item Library: \textbf{good} - As said before, there is a dedicated SDK for the ESP8266, but not for the NodeMCU, neither Arduino.
 \item Boilerplate code: \textbf{good} - There is quite a little boilerplate C code, but it is well-explained, and it shouldn't be really too hard to work with it.
 \end{itemize}
 
@@ -522,7 +522,7 @@ The overall UI-UX is pretty fine, with many resources that are rather easy to fi
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{good} - It seems that Parse is taking the subject of security rather seriously, are there are still \href{https://github.com/parse-community/parse-server/issues?utf8=\%E2\%9C\%93&q=is\%3Aissue\%20is\%3Aopen\%20security}{discussions on how to improve} it. Parse uses Application Keys for \href{http://docs.parseplatform.org/parse-server/guide/#using-parse-sdks-with-parse-server}{devicec authentication}, but other client-side keys can also be added. They also give \href{http://docs.parseplatform.org/rest/guide/#security}{very detailed instructions} on how to properly implement security in applications using the tools they provide. Finally, they recently forwarded a warning \href{http://blog.parseplatform.org/security/nodejs/update/notice/2017/07/20/nodejs-security-notice.html}{on the official blog} about a flaw in NodeJS.
+\item Statements: \textbf{good} - It seems that Parse is taking the subject of security rather seriously, are there are still \href{https://github.com/parse-community/parse-server/issues?utf8=\%E2\%9C\%93&q=is\%3Aissue\%20is\%3Aopen\%20security}{discussions on how to improve} it. Parse uses Application Keys for \href{http://docs.parseplatform.org/parse-server/guide/#using-parse-SDK-with-parse-server}{devicec authentication}, but other client-side keys can also be added. They also give \href{http://docs.parseplatform.org/rest/guide/#security}{very detailed instructions} on how to properly implement security in applications using the tools they provide. Finally, they recently forwarded a warning \href{http://blog.parseplatform.org/security/nodejs/update/notice/2017/07/20/nodejs-security-notice.html}{on the official blog} about a flaw in NodeJS.
 \item Audits: \textbf{non-existent} - There are no traces of a proper audit of the Parse Platform, but some users did \href{https://groups.google.com/forum/#!topic/parse-developers/qjvKJYikHQ8}{voice concerns} about the Parse's security model, which have been adressed at the time.
 \end{itemize}
 
@@ -531,9 +531,9 @@ Parse clearly voice their concern for security, however, there is no trace of an
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{3} - Arduino Yún, Unix-based, and RTOS platforms are supported by two projects: \href{https://github.com/parse-community/parse-embedded-sdks}{Parse Embedded SDK} and \href{https://github.com/parse-community/Parse-SDK-Arduino}{Parse SDK Arduino}.
+\item Number of compatible hardware platforms: \textbf{3} - Arduino Yún, Unix-based, and RTOS platforms are supported by two projects: \href{https://github.com/parse-community/parse-embedded-SDK}{Parse Embedded SDK} and \href{https://github.com/parse-community/Parse-SDK-Arduino}{Parse SDK Arduino}.
 \item Number of supported protocols: \textbf{1} - Everything is done through a REST HTTP API.
-\item Number of SDK implementations: \textbf{7} - iOS, Android, Javascript, .NET + Xamarin, MacOS, Unity, PHP, there are many ways to easily inter-connect with Parse. There are also some experimental or community-initiated SdK implementations, like \href{https://github.com/parse-community/Parse-Swift}{Parse-Swift} or \href{https://github.com/modernistik/parse-stack}{a Ruby client}.
+\item Number of SDK implementations: \textbf{7} - iOS, Android, Javascript, .NET + Xamarin, MacOS, Unity, PHP, there are many ways to easily inter-connect with Parse. There are also some experimental or community-initiated SDK implementations, like \href{https://github.com/parse-community/Parse-Swift}{Parse-Swift} or \href{https://github.com/modernistik/parse-stack}{a Ruby client}.
 \item Modularity: \textbf{poor} - The project is tightly tied to NodeJS and MongoDB, and it take more than just a little work to get it working with other components.
 \end{itemize}
 
@@ -542,7 +542,7 @@ The overall connectivity-flexiblity is good, but more client-focused than hardwa
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{good} - NodeJS and MongoDB are two technologies that are known for their capacity to scale.
+\item Third-Party scalability: \textbf{average} - NodeJS and MongoDB are two technologies that are known for their capacity to scale.
 \item Platform scalability: \textbf{poor} - It doesn't seem like any sort of inter-instance communication has been devised, nor is there any integrated load-balancing.
 \end{itemize}
 
@@ -622,13 +622,13 @@ While the project seems to take security in consideration, this is apparently no
 \item Modularity: \textbf{poor} - To this date, there is no componentization of Blynk-Server: it is just one big standalone, and most of the data isn't actually stored in it, it actually acts more like a bridge between the sensors and the app. If we want to store the raw data, two possibilities are offered: PostgreSQL and .csv files, but no way to leverage this stored data seems to be provided at the moment.
 \end{itemize}
 
-Overall, the connectivity/flexibility advantage of Blynk is solely assured by its hardware compatibility. When it comes to SDKs or modularity, this is definitely not the case.
+Overall, the connectivity/flexibility advantage of Blynk is solely assured by its hardware compatibility. When it comes to SDK or modularity, this is definitely not the case.
 
 \paragraph{Scalability}
 
 \begin{itemize}
 \item Third-Party scalability: \textbf{average} - PostgreSQL is definitely capable of scaling, however, since the app does not take advantage of it, its interest stays limited.
-\item Platform scalability: \textbf{poor} - There si no apparent way to distribute data storage, or any integrated load-balancing between server instances.
+\item Platform scalability: \textbf{poor} - There is no apparent way to distribute data storage, or any integrated load-balancing between server instances.
 \end{itemize}
 
 The scalability of Blynk seems rather limited, at least for the local version. Since on the official website, they claim that their Blynk Cloud Server handles 21 Billion+ requests per month, they must have devised of a way to scale their server application, but it is unclear how.
@@ -737,7 +737,7 @@ Kapua has no support for Arduino/NodeMCU/ESP8266 at all.
 
 \begin{itemize}
 \item First Release Date: \textbf{2013/10/16} - The project, as most of the others that are compared here, was created around 2013/2014, which makes it one of the long-standing contestants.
-\item Latest Release Date: \textbf{2017/07/23} - Since the first release, 54 other releases were made, the latest one dating from month before this review. We can therefore assume it is still an active project.
+\item Latest Release Date: \textbf{2017/07/23} - Since the first release, 54 other releases were made, the latest one dating back from one month before this review. On top of that, the release cycle is highly regular. We can therefore assume it is still an active project.
 \item Latest Commit Date: \textbf{2017/08/21} - The work did certainly not stop at the last release, and another one is in the making, as the latest commits prove it.
 \item Number of main contributors: \textbf{2} - The project's code base is mainly maintained by two persons, though 56 contributors in total have brought their little piece to it.
 \item Open issues ratio: \textbf{0.1063829787} - Over the course of the projects, 940 issues were created, and 100 remain to this day. The ratio is rather good, but in the light of the age of the projects and its extensive use of issues, it seems that the team may require more help treating all the queries. 
@@ -748,58 +748,68 @@ The project is in rather good health, aside from the fact the two main developer
 \paragraph{Company backing}
 
 \begin{itemize}
-\item Company Support: \textbf{excellent} - 
-\item Company Adoption: \textbf{good} - 
+\item Company Support: \textbf{good} - Node-RED was originally developed as a side-project by two members of the IBM’s Emerging Technology Services team and is now a part of the JS Foundation, of which IBM is one of the founding members. It is unclear whether IBM still finances the project, but it is clear that its main two developpers do commit a lot of their time to the project, and when they are not available, the very strong community fills in the GAP for support. However, there seem to be no clear company support offer, like a direct line to the devs through email or phone.
+\item Company Adoption: \textbf{good} - According to \href{https://nodered.org/blog/2016/10/17/js-foundation}{this blog post}, companies such as \href{https://fred.sensetecnic.com/}{SenseTecnic}, \href{https://flow.att.com/}{AT\&T} and \href{https://www.redconnect.io/}{Red Ant} provide Node-RED services. Even though the software still hasn't released a 1.0 version, it seems rather trusted and well-known in the IoT industry. It also seems they have a partnership with the RaspberryPi foundation, since Node-RED is now available by default on every new RaspberryPi device.
 \end{itemize}
+
+Even though the project's governance is \href{https://nodered.org/about/governance/}{clearly willed to be community-driven}, the company-backing doesn't look half-bad, with some big names trusting the project.
 
 \paragraph{Documentation}
 
 \begin{itemize}
-\item Currentness: \textbf{good} - 
-\item Adaptability: \textbf{excellent} - 
+\item Currentness: \textbf{good} - According to the \href{https://github.com/node-red/node-red.github.io/tree/master/docs}{Github repository of the website}, the documentation is actively maintained, the latest changes having been made only 5 days before the writing of this review, and the oldest only 6 months old.
+\item Adaptability: \textbf{excellent} - The documentation is \textbf{very-well organised}. User and developer resources are clearly separated, all very complete and accessible.
 \end{itemize}
+
+The documentation looks excellent overall. Add to this the many resources that have been devised by third-parties, like the ones of \href{http://noderedguide.com/}{Sense Tecnic}, and you have no reason not to easily get started.
 
 \paragraph{UI-UX}
 
 \begin{itemize}
-\item Server Management UI: \textbf{good} - 
-\item Sample applications: \textbf{good} - 
+\item Server Management UI: \textbf{excellent} - Actually, one of the main forte of the project is clearly its embedded UI that enables dynamic \href{https://en.wikipedia.org/wiki/Flow-based_programming}{Flow-Programming}. Everything is done through simple boxes, "nodes", linked together to create new functionnality. This workflow feels just right for the IoT, which is actually just that: connecting boxes together.
+\item Sample applications: \textbf{good} - Actually, since Node-Red can be run on Edge devices, it is in itself a sample application, and \href{http://developers.sensetecnic.com/article/tutorial-connecting-device-node-red-to-cloud-node-red/}{can be used with a cloud instance}. There is also a \href{https://github.com/node-red/node-red-dashboard}{provided web-based dashboard} with many widgets from which to choose and compose your own application. However, an example Android or iOS native app couldn't be found.
 \end{itemize}
+
+In terms of UI-UX, Node-RED clearly tops any of the other solutions.
 
 \paragraph{Security} 
 
 \begin{itemize}
-\item Statements: \textbf{average} - 
-\item Audits: \textbf{non-existent} - 
+\item Statements: \textbf{good} - Most of security measures taken  in Node-RED are described on a \href{https://nodered.org/docs/security}{dedicated documentation page}. Though it seems that by default, Node-RED is insecure, all the steps to properly secure it with authentication and encryption are described on this page. However it doesn't seem there is any kind of storage-encryption.
+\item Audits: \textbf{poor} - While it seems to be the only project of the entire list that got a security audit, \href{http://www.isgroup.it/node.security/audit-node-red.html}{the one we found} is rather poor since automated. Actually, it does have the merit to detect some missing HTTP security features, but many of the detected "problems" are actually false alerts.
 \end{itemize}
+
+It seems that the people behind Node-RED do care about security, though there seems to be some room for improvement.
 
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{4} - 
-\item Number of supported protocols: \textbf{8} - 
-\item Number of SDK implementations: \textbf{2} - 
-\item Modularity: \textbf{good} - 
+\item Number of compatible hardware platforms: \textbf{17+} - According to \href{https://github.com/node-red/node-red-nodes}{the list of nodes in this repository}, there are already 17 hardware platforms that benefit of a node, but since it doesn't even include the arduino one, we can safely assume there are many more that are reported in this list.
+\item Number of supported protocols: \textbf{2} - It seems that Node-RED is essentially capable of HTTP and MQTT interactions (actually, \href{https://nodered.org/about/}{its roots come from this second protocol}).
+\item Number of SDK implementations: \textbf{2} - Let's say that the Node-RED interface makes one since it can be used \href{https://nodered.org/docs/platforms/android}{on phones} as well. To that we can add the \href{https://github.com/node-red/node-red-dashboard}{provided web-based dashboard}.
+\item Modularity: \textbf{excellent} - Thanks to its "node"-paradigm, Node-RED can easily integrate just about any component, already including three DBs (LevelDB, MySQL, SQLite) for example.
 \end{itemize}
+
+Simply put, Node-RED is a model of connectivity/flexibility/modularity.
 
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - 
-\item Platform scalability: \textbf{excellent} - 
+\item Third-Party scalability: \textbf{good} - The nodes that integrate third-party components offer a very good scalability by themselves.
+\item Platform scalability: \textbf{good} - The platform does not include scalability elements (\href{https://nodered.org/blog/2017/07/17/roadmap-to-1-dot-0}{planned for version 0.20}) like load-balancing and the such. However, it seems it is already easy to make to NodeRED instances communicate together (see links in the UI-UX part).
 \end{itemize}
 
 \paragraph{Arduino/NodeMCU compatibility}
 
 \begin{itemize}
-\item Library: \textbf{good} - 
-\item Boilerplate code: \textbf{good} - 
+\item Library: \textbf{good} - It doesn't seem like there is a specific node and official documentation for the NodeMCU or the ESP8266 like \href{https://nodered.org/docs/hardware/arduino}{there is for the Arduino}, but it seems that we can make do with some third-party tutorials using generic nodes like \href{https://www.hackster.io/itchopshop/nodemcu-with-azure-mqtt-and-node-red-ef1f94}{this one}, or \href{http://www.instructables.com/id/Tutorial-ESP8266-and-Node-RED-MQTT-GPIO-Mosquitto-/}{this one}.
+\item Boilerplate code: \textbf{excellent} - Actually, since its all flow-programming, there is no boilerplate code, which is very much appreciated !
 \end{itemize}
 
 \paragraph{Java} 
 
 \begin{itemize}
-\item Server percentage: \textbf{81.8\%} - 
+\item Server percentage: \textbf{0\%} - NodeRed is a full Javascript/NodeJS project.
 \end{itemize}
 
 \newpage
