@@ -30,14 +30,24 @@
 
 The context for this document is the need for an IoT middleware platform for building, managing, and integrating connected products for the \href{https://github.com/occiware/occiware-ozwillo}{OCCIware LinkedData Use Case}. As the OCCIware project is FOSS\footnote{Free or Open-Source Software}, the component \textbf{must} be open-source itself. Therefore, what you will find here is a short state of the art of such frameworks, and no consideration shall be given to proprietary solutions.
 
-\emph{Please note that, while the evaluation criteria themselves may be considered timeless, the analyses presented below only reflects the state of the different projects as of this document's last update date, written on the first page.}
+\medskip
 
-\emph{If you spot a mistake or confusion within the document, please don't hesitate to either open a Github issue on \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{the source repository} or directly fork it, modify your clone, and make a pull-request for the author to easily merge your modifications if deemed appropriate.}
+\emph{Please note that, while the evaluation criteria themselves may be considered timeless, the analyses presented below only reflect the state of the different projects as of this document's last update date, written on the first page.}
+
+\medskip
+
+\textbf{If you spot a mistake or confusion within the document, please don't hesitate to either open a Github issue on \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{the source repository} or directly fork it, modify your clone, and make a pull-request for the author to easily merge your modifications if deemed appropriate.}
 
 \section*{License}
 \addcontentsline{toc}{section}{\protect\numberline{}License}%
 
 This work is distributed under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License} (CC BY-SA 4.0). You may find the complete license \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks/blob/master/LICENSE}{on the report's Github repository}.
+
+\medskip
+
+\textbf{Attribution should at least contain the author's name "Benoit RENAULT" and a link to the source repository: \url{https://github.com/Xia0ben/FOSS_IoT_Frameworks}.}
+
+\medskip
 
 While the license doesn't require it, the author, Benoit Renault, would be glad if you notified him in the case you wish to reuse this report in some other work, by contacting him through a Github issue on this repository.
 
@@ -47,7 +57,7 @@ While the license doesn't require it, the author, Benoit Renault, would be glad 
 
 Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than three hours. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent).
 
-Some of them come from \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{}, and the ones about security have been inspired by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
+Some of them have been inspired by \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{an O'Reilly report on IoT platforms}, and the security-oriented ones by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
 
 \subsection{General criteria}
 
@@ -713,7 +723,7 @@ Kapua doesn't seem to particularly shine in terms of scalability.
 \item Boilerplate code: \textbf{non-existent} - Thus no boilerplate code.
 \end{itemize}
 
-Kapua has bo support for Arduino/NodeMCU/ESP8266 at all.
+Kapua has no support for Arduino/NodeMCU/ESP8266 at all.
 
 \paragraph{Java} 
 
@@ -726,12 +736,14 @@ Kapua has bo support for Arduino/NodeMCU/ESP8266 at all.
 \paragraph{Project Health}
 
 \begin{itemize}
-\item First Release Date: 
-\item Latest Release Date: \textbf{2017/06/19} - 
-\item Latest Commit Date: \textbf{2017/06/20} - 
-\item Number of main contributors: \textbf{1} - 
-\item Open issues ratio: \textbf{0.0534653465} - 
+\item First Release Date: \textbf{2013/10/16} - The project, as most of the others that are compared here, was created around 2013/2014, which makes it one of the long-standing contestants.
+\item Latest Release Date: \textbf{2017/07/23} - Since the first release, 54 other releases were made, the latest one dating from month before this review. We can therefore assume it is still an active project.
+\item Latest Commit Date: \textbf{2017/08/21} - The work did certainly not stop at the last release, and another one is in the making, as the latest commits prove it.
+\item Number of main contributors: \textbf{2} - The project's code base is mainly maintained by two persons, though 56 contributors in total have brought their little piece to it.
+\item Open issues ratio: \textbf{0.1063829787} - Over the course of the projects, 940 issues were created, and 100 remain to this day. The ratio is rather good, but in the light of the age of the projects and its extensive use of issues, it seems that the team may require more help treating all the queries. 
 \end{itemize}
+
+The project is in rather good health, aside from the fact the two main developers seem like they could use some help.
 
 \paragraph{Company backing}
 
