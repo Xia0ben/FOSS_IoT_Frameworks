@@ -1,9 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-
-\title{FOSS IoT Frameworks review}
-\author{Benoit RENAULT}
-\date{2017/08/10}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{graphicx}
+\usepackage{hyperref}
 
 %% Margins
 \usepackage[
@@ -13,9 +12,12 @@
     right=3cm
 ]{geometry}
 
-\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\title{%
+  FOSS IoT Frameworks review \\
+  - \\
+  \large \href{http://www.occiware.org/bin/view/Main/}{OCCIware Project}}
+\author{Benoit RENAULT}
+\date{2017/08/10}
 
 \begin{document}
 
@@ -28,36 +30,30 @@
 \section*{Introduction}
 \addcontentsline{toc}{section}{\protect\numberline{}Introduction}%
 
-The context for this document is the need for an IoT middleware platform for building, managing, and integrating connected products for the \href{https://github.com/occiware/occiware-ozwillo}{OCCIware LinkedData Use Case}. As the OCCIware project is FOSS\footnote{Free or Open-Source Software}, the component \textbf{must} be open-source itself. Therefore, what you will find here is a short state of the art of such frameworks, and no consideration shall be given to proprietary solutions.
+\paragraph{} The context for this document is the need for an IoT middleware platform for building, managing, and integrating connected products for the \href{https://github.com/occiware/occiware-ozwillo}{OCCIware LinkedData Use Case}. As the \href{http://www.occiware.org/bin/view/Main/}{OCCIware project} is FOSS\footnote{Free or Open-Source Software}, the component \textbf{must} be open-source itself. Therefore, what you will find here is a short state of the art of such frameworks, and no consideration shall be given to proprietary solutions.
 
-\medskip
+\paragraph{} \emph{Please note that, while the evaluation criteria themselves may be considered timeless, the analyses presented below only reflect the state of the different projects as of this document's last update date, written on the first page.}
 
-\emph{Please note that, while the evaluation criteria themselves may be considered timeless, the analyses presented below only reflect the state of the different projects as of this document's last update date, written on the first page.}
+\paragraph{} \textbf{The criteria are mainly chosen so that each solution needs not be analyzed more than three hours, and only by consulting the website, the documentation and the project's repository, never actually executing the project.}
 
-\medskip
-
-\textbf{If you spot a mistake or confusion within the document, please don't hesitate to either open a Github issue on \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{the source repository} or directly fork it, modify your clone, and make a pull-request for the author to easily merge your modifications if deemed appropriate.}
+\paragraph{} If you spot a mistake or confusion within the document, please don't hesitate to either open a Github issue on \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{the source repository} or directly fork it, modify your clone, and make a pull-request for the author to easily merge your modifications if deemed appropriate.
 
 \section*{License}
 \addcontentsline{toc}{section}{\protect\numberline{}License}%
 
-This work is distributed under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License} (CC BY-SA 4.0). You may find the complete license \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks/blob/master/LICENSE}{on the report's Github repository}.
+\paragraph{} This work is distributed under the \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License} (CC BY-SA 4.0). You may find the complete license \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks/blob/master/LICENSE}{on the report's Github repository}.
 
-\medskip
+\paragraph{} \textbf{Attribution should at least contain the author's name "Benoit RENAULT" and a link to the source repository: \url{https://github.com/Xia0ben/FOSS_IoT_Frameworks}.}
 
-\textbf{Attribution should at least contain the author's name "Benoit RENAULT" and a link to the source repository: \url{https://github.com/Xia0ben/FOSS_IoT_Frameworks}.}
-
-\medskip
-
-While the license doesn't require it, the author, Benoit Renault, would be glad if you notified him in the case you wish to reuse this report in some other work, by contacting him through a Github issue on this repository.
+\paragraph{} While the license doesn't require it, the author, Benoit Renault, would be glad if you notified him in the case you wish to reuse this report in some other work, by contacting him through a Github issue on this repository.
 
 \newpage
 
 \section{Evaluation criteria}
 
-Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. The criteria are also chosen so that each solution needs not be analyzed more than three hours. For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent).
+\paragraph{} Each of the criteria is presented below with at least one argument as to how it allows to measure a given characteristic. \textbf{For recall, the criteria are also chosen so that each solution needs not be analyzed more than three hours, and only by consulting the website, the documentation and the project's repository, never actually executing the project.} For qualitative criteria, a little argumentation will be given in the detailed analysis (noted with excellent/good/average/poor/non-existent).
 
-Some of them have been inspired by \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{an O'Reilly report on IoT platforms}, and the security-oriented ones by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
+\paragraph{} Some of them have been inspired by \href{https://www.thingworx.com/wp-content/uploads/WP_oreilly-media_evaluating-and-choosing-an-iot-platform_978-1-491-95203-0_EN.pdf}{an O'Reilly report on IoT platforms}, and the security-oriented ones by \href{https://www.owasp.org/index.php/IoT_Framework_Assessment}{Craig SMITH's "IoT Framework Assessment" OWASP page}.
 
 \subsection{General criteria}
 
@@ -144,6 +140,19 @@ Here are some specific criteria that are related to the peculiar needs of the OC
 
 \subsection{SiteWhere}
 
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & http://www.sitewhere.org/ \\ \hline
+Documentation URL & http://documentation.sitewhere.io/ \\ \hline
+Repository URL & https://github.com/sitewhere/sitewhere \\ \hline
+License & CPAL-1.0 \\ \hline
+Main Selling Point & Highly flexible \\ \hline
+\end{tabular}
+\end{center}
+
 \paragraph{Project Health}
 
 \begin{itemize}
@@ -183,7 +192,7 @@ Good documentation overall, does make you want to use the product.
 
 The proposed UIs seem good overall, but it would take a deeper examination to fully conclude on their capacity.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{average} - There is no open commitment to a secure system, on none of their websites. No explanation of the security measures they have taken, except that they use the Spring Frameworks integrated capabilities (which is good). No mention about the cryptographic means they use either.
@@ -221,13 +230,27 @@ It seems that Sitewhere's scalability claim is only based off the capabilities o
 
 Quite good Arduino compatibility, but it would really be welcome to have some documentation on its usage with NodeMCU/ESP8266 specifically.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{81.8\%} - The server is mainly just plain Java. Exactly what we need.
 \end{itemize}
 
 \subsection{Kaa}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & https://www.kaaproject.org/ \\ \hline
+Documentation URL & https://kaaproject.github.io/kaa/docs/v0.10.0/Welcome/ \\ \hline
+Repository URL & https://github.com/kaaproject/kaa/ \\ \hline
+License & Apache-2.0 \\ \hline
+Main Selling Point & Pluggable architecture \\ \hline
+\end{tabular}
+\end{center}
+
 
 \paragraph{Project Health}
 
@@ -245,7 +268,7 @@ Kaa has a very good project health overall, especially since it has reached a po
 
 \begin{itemize}
 \item Company Support: \textbf{good} - The company behind Kaa, \href{https://www.kaaiot.io/}{KaaIoT}, seems to be more committed to corporate rather than community support (\href{https://stackoverflow.com/questions/44330714/why-are-the-questions-about-kaa-basically-not-being-answered}{see this StackOverflow discussion}), especially with the upcoming release.
-\item Company Adoption: \textbf{average} - Given that the company has existed for 3 years, has, acccording to its LinkedIn page, between 51 and 200 employees, and that \href{https://www.kaaiot.io/company/careers/}{they are still recruiting a lot}, we can assume they have definitely found clients to buy one of the many formulas they offer on their corporate website. However, no trace was found on who these clients are.
+\item Company Adoption: \textbf{average} - Given that the company has existed for 3 years, has, acccording to its LinkedIn page, between 51 and 200 employees, and that \href{https://www.kaaiot.io/company/careers/}{they are still recruiting a lot}, we can assume they have definitely found clients to buy one of the many formulas they offer on their corporate website. However, no trace was found on who these clients are, likely because of Non-Disclosure Agreements.
 \end{itemize}
 
 Kaa is supported by a rather big team, and after 3 years of continued existence, we may assume that its company backing is good.
@@ -268,7 +291,7 @@ The overall quality of the documentation is very good, and makes you feel you ca
 
 The user experience is especially good thanks to the many sample applications, and the clearly displayed will the Kaa project has to be extremely compatible.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{excellent} - A clear concern for security has been expressed by the CTO of the company in a \href{https://www.kaaproject.org/lets-address-dark-side-iot-tackling-security-community/}{blog post} and is also mentioned in their \href{https://www.kaaproject.org/faq/}{FAQ} and \href{http://docs.kaaproject.org/display/KAA/Endpoint+registration#Endpointregistration-Registrationsecurity}{documentation}. According to these sources, data communication between the components is secured using with 2048bits-RSA encryption and 256bits-AES signing. Apparently, Kaa also ensures secure data storage by enforcing database-level encryption, as well as tenant-level encryption, which is very good practice. In the FAQ, it is also said that Kaa is fault-tolerant, since the data is automatically replicated across the nodes.
@@ -308,13 +331,26 @@ Kaa seems to have been truly been built from the ground-up to be fully distribut
 
 Relatively good compatibility with the ESP8266, however, the support for Arduino or NodeMCU is lacking.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{69.9\%} - Mainly developped in Java (Netty+Spring), almost all of its third party services are written in Java too.
 \end{itemize}
 
 \subsection{Device Hive}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & https://devicehive.com/ \\ \hline
+Documentation URL & https://docs.devicehive.com/docs \\ \hline
+Repository URL & https://github.com/devicehive/devicehive-java-server \\ \hline
+License & Apache-2.0 \\ \hline
+Main Selling Point & Many integrations \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -331,7 +367,7 @@ The project seems in overall good health, and still growing.
 \paragraph{Company backing}
 
 \begin{itemize}
-\item Company Support: \textbf{good} - DeviceHive is supported by \href{http://www.dataart.com/}{DataArt}, a company that has, according to \href{https://www.linkedin.com/company/dataart}{LinkedIn}, 1001 to 5000 employees. Community support seems rather weak, with only a \href{https://docs.devicehive.com/discuss}{helpdesk} that doesn't seem to have been of much use (only one message), and the sporadic use of Github issues doesn't clue at a very active community exchange. 
+\item Company Support: \textbf{good} - DeviceHive is supported by \href{http://www.dataart.com/}{DataArt}, a company that has, according to \href{https://www.linkedin.com/company/dataart}{LinkedIn}, 1001 to 5000 employees. Community support seems rather weak, with only a \href{https://docs.devicehive.com/discuss}{helpdesk} that doesn't seem to have been of much use (only one message), and the sporadic use of Github issues doesn't clue at a very active community exchange.
 \item Company Adoption: \textbf{good} - DataArt has a \href{http://www.dataart.com/clients/select-clients}{huge list of clients}, and \href{http://www.dataart.com/about-dataart/industry-recognition}{received quite a few awards}, but most of this is not directly linked to DeviceHive, which seems to be only one of their many projects. On their \href{http://www.dataart.com/clients/success-stories}{success stories pages}, there is actually one company that mentions DeviceHive: \href{http://www.interdigital.com/solution/wotio}{Wot.io}.
 \end{itemize}
 
@@ -351,7 +387,7 @@ Overall, DeviceHive has good company backing, though the community aspect of the
 \item Sample applications: \textbf{average} - The only client interface provided is a web interface, based on \href{http://freeboard.io/}{FreeBoard}. Nothing for native development. As for sample apps, there is only one for RaspberryPi and one for ESP8266.
 \end{itemize}
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{poor} - No statements on security whatsoever. It is not even clearly documented what they use for authentication, encryption and signing. Nothing on the corporate website, nothing in the documentation, except an API for authentification which means there is something, but that's it.
@@ -389,13 +425,26 @@ The approach DeviceHive takes to scalability definitely is interesting, but also
 
 There are some examples with the ESP8266, however they do not seem to cover much.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{97.2\%} - Almost everything is pure Java, which makes it potentially easily maintainable.
 \end{itemize}
 
 \subsection{Zetta JS}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & http://www.zettajs.org/ \\ \hline
+Documentation URL & https://github.com/zettajs/zetta/wiki \\ \hline
+Repository URL & https://github.com/zettajs/zetta \\ \hline
+License & MIT \\ \hline
+Main Selling Point & API-First IoT Platform \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -436,7 +485,7 @@ Overall, the documentation doesn't look that good. Particularly, it uses the int
 
 In terms of UI-UX, ZettaJS seems lacking overall, since its focus is primarily in providing APIs.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{poor} - No statements about security except \href{https://github.com/zettajs/zetta/wiki/Overview#linking}{one short paragraph} in the documentation, that doesn't explain the security strategy at all.
@@ -451,7 +500,7 @@ ZettaJS doesn't express much concerns about security, though it is a key element
 \item Number of compatible hardware platforms: \textbf{11} - This is hard number to estimate since Zetta rather use a generic concept of "Driver" for any kind of connection. From the \href{http://www.zettajs.org/modules/}{official driver list}, the following harware platforms have been spotted: Wemo, Sphero, Spark, BeagleBone, Pinoccio, Pebble, OpenXC, RaspberryPi, XiaoMi, Intel Edison, Google Glass.
 \item Number of supported protocols: \textbf{1} - ZettaJS seems to only understand HTTP requests, though it claims it should be able to bridge other protocols to it, but we couldn't find any such example.
 \item Number of SDK implementations: \textbf{1} - There is only a \href{https://github.com/zettajs/ZettaKit}{native SDK for IOS}.
-\item Modularity: \textbf{good} - As everything is API, any component can conceptually be added/changed/removed easily.
+\item Modularity: \textbf{good} - As everything is API, any component can conceptually be added, changed, or removed easily.
 \end{itemize}
 
 The API-driven ideology seems to make connexion to the system very easy, but in fact, to this day, there seem to be no easy way to connect devices that don't run a linux kernel on them.
@@ -474,13 +523,26 @@ ZettaJS doesn't seem to integrate anything related to scalability.
 
 No clear support of Arduino/NodeMCU in ZettaJS.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{0\%} - ZettaJS, is, as the name indicates, a full JS solution. No Java here.
 \end{itemize}
 
 \subsection{Parse}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & http://parseplatform.org/ \\ \hline
+Documentation URL & http://docs.parseplatform.org/ \\ \hline
+Repository URL & https://github.com/parse-community/parse-server \\ \hline
+License & BSD \\ \hline
+Main Selling Point & NodeJS Based \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -519,7 +581,7 @@ It seems that Parse is now mainly a community-governed project, meaning no easy 
 
 The overall UI-UX is pretty fine, with many resources that are rather easy to find.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{good} - It seems that Parse is taking the subject of security rather seriously, are there are still \href{https://github.com/parse-community/parse-server/issues?utf8=\%E2\%9C\%93&q=is\%3Aissue\%20is\%3Aopen\%20security}{discussions on how to improve} it. Parse uses Application Keys for \href{http://docs.parseplatform.org/parse-server/guide/#using-parse-SDK-with-parse-server}{devicec authentication}, but other client-side keys can also be added. They also give \href{http://docs.parseplatform.org/rest/guide/#security}{very detailed instructions} on how to properly implement security in applications using the tools they provide. Finally, they recently forwarded a warning \href{http://blog.parseplatform.org/security/nodejs/update/notice/2017/07/20/nodejs-security-notice.html}{on the official blog} about a flaw in NodeJS.
@@ -557,13 +619,26 @@ Parse looks like it could scale rather well if only it would integrate clear ins
 
 There is an Arduino compatibility, however, it sadly only covers linux-enabled devices like the Yun.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{0\%} - This is a full JS solution, no Java here.
 \end{itemize}
 
 \subsection{Blynk}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & http://www.blynk.io/ \\ \hline
+Documentation URL & http://docs.blynk.cc/ \\ \hline
+Repository URL & https://github.com/blynkkk/blynk-server \\ \hline
+License & GPL-3.0 \\ \hline
+Main Selling Point & Easy app creation \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -599,12 +674,12 @@ Rather fine documentation, however, the lack of direct contributions from the co
 
 \begin{itemize}
 \item Server Management UI: \textbf{average} - The \href{https://github.com/blynkkk/blynk-server#administration-ui}{Administration UI} offers somewhat the same functionnalities as the other solutions, though not as complete as what you would have with Parse or Kaa. The design is simple and minimalist.
-\item Sample applications: \textbf{good} - The provided Blynk app is excellent in terms of functionnalities, and this part would have deserved an "excellent" mention if and only if there also were less functionnal open-source client apps provided. 
+\item Sample applications: \textbf{good} - The provided Blynk app is excellent in terms of functionnalities, and this part would have deserved an "excellent" mention if and only if there also were less functionnal open-source client apps provided.
 \end{itemize}
 
 Good UI-UX experience overall, especially considering the great phone app.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{average} - While the corporate website doesn't mention security much, the \href{http://docs.blynk.cc/#security}{documentation} actually provide a few details as of the security measures taken by the platform, including authentication and end-to-end encryption.
@@ -642,13 +717,26 @@ The scalability of Blynk seems rather limited, at least for the local version. S
 
 Blynk boasts the best hardware compatibility out there, and such an ease of integration is simply found in none of the other projects.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{96.9\%} - This is a fully java-driven server, the other traces of code are HTML and CSS, which do not quite count.
 \end{itemize}
 
 \subsection{Kapua}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & https://www.eclipse.org/kapua/ \\ \hline
+Documentation URL & https://www.eclipse.org/kapua/documentation.php \\ \hline
+Repository URL & https://github.com/eclipse/kapua \\ \hline
+License & EPL-1.0 \\ \hline
+Main Selling Point & Modular \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -689,7 +777,7 @@ Overall, we can assume that the not-so-good documentation is the result of young
 
 Expectedly, since the project is rather recent, its UI-UX is rather poor overall. However, since the project is still under heavy development, we ca only expect it to get better.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{average} - The only mentions of the security procedures the project has deployed are on the \href{http://download.eclipse.org/kapua/docs/develop/user-manual/en/jwt_security.html}{JWT Security documentation page}. This merely hints at the use of encryption, but no details as to how it is enforced is given. A good point is that, thanks to the fact it is an Eclipse project, a proper \href{https://github.com/eclipse/kapua/issues}{contact form for reporting security issues} is provided.
@@ -699,9 +787,9 @@ Expectedly, since the project is rather recent, its UI-UX is rather poor overall
 \paragraph{Connectivity/Flexibility}
 
 \begin{itemize}
-\item Number of compatible hardware platforms: \textbf{1} - Linux-based and \href{https://www.eclipse.org/kura/}{Kura}-Enabled hardware seems to be the only kind of compatible hardware. This includes the well-known RaspberryPi or BeagleBones. 
+\item Number of compatible hardware platforms: \textbf{1} - Linux-based and \href{https://www.eclipse.org/kura/}{Kura}-Enabled hardware seems to be the only kind of compatible hardware. This includes the well-known RaspberryPi or BeagleBones.
 \item Number of supported protocols: \textbf{1} - It seems that currently, Kapua is only supposed to connect to MQTT-Kura enabled devices. Actually, the framework seems highly coupled with this other project.
-\item Number of SDK implementations: \textbf{0} - No SDK of any sort has been found. 
+\item Number of SDK implementations: \textbf{0} - No SDK of any sort has been found.
 \item Modularity: \textbf{poor} - It seems that aside from being able to switch between two database systems, MariaDB or H2 SQL Server, the project is rather monolithic, and does seem easy to fiddle with.
 \end{itemize}
 
@@ -725,13 +813,26 @@ Kapua doesn't seem to particularly shine in terms of scalability.
 
 Kapua has no support for Arduino/NodeMCU/ESP8266 at all.
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{91.8\%} - Thanks to its status as an Eclipse project, Kapua is almost fully written in Java.
 \end{itemize}
 
 \subsection{NodeRed}
+
+\paragraph{Project Identity}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Corporate URL & https://nodered.org/ \\ \hline
+Documentation URL & https://nodered.org/docs/ \\ \hline
+Repository URL & https://github.com/node-red/node-red \\ \hline
+License & Apache-2.0 \\ \hline
+Main Selling Point & Flow-based programming \\ \hline
+\end{tabular}
+\end{center}
 
 \paragraph{Project Health}
 
@@ -740,7 +841,7 @@ Kapua has no support for Arduino/NodeMCU/ESP8266 at all.
 \item Latest Release Date: \textbf{2017/07/23} - Since the first release, 54 other releases were made, the latest one dating back from one month before this review. On top of that, the release cycle is highly regular. We can therefore assume it is still an active project.
 \item Latest Commit Date: \textbf{2017/08/21} - The work did certainly not stop at the last release, and another one is in the making, as the latest commits prove it.
 \item Number of main contributors: \textbf{2} - The project's code base is mainly maintained by two persons, though 56 contributors in total have brought their little piece to it.
-\item Open issues ratio: \textbf{0.1063829787} - Over the course of the projects, 940 issues were created, and 100 remain to this day. The ratio is rather good, but in the light of the age of the projects and its extensive use of issues, it seems that the team may require more help treating all the queries. 
+\item Open issues ratio: \textbf{0.1063829787} - Over the course of the projects, 940 issues were created, and 100 remain to this day. The ratio is rather good, but in the light of the age of the projects and its extensive use of issues, it seems that the team may require more help treating all the queries.
 \end{itemize}
 
 The project is in rather good health, aside from the fact the two main developers seem like they could use some help.
@@ -772,7 +873,7 @@ The documentation looks excellent overall. Add to this the many resources that h
 
 In terms of UI-UX, Node-RED clearly tops any of the other solutions.
 
-\paragraph{Security} 
+\paragraph{Security}
 
 \begin{itemize}
 \item Statements: \textbf{good} - Most of security measures taken  in Node-RED are described on a \href{https://nodered.org/docs/security}{dedicated documentation page}. Though it seems that by default, Node-RED is insecure, all the steps to properly secure it with authentication and encryption are described on this page. However it doesn't seem there is any kind of storage-encryption.
@@ -806,7 +907,7 @@ Simply put, Node-RED is a model of connectivity/flexibility/modularity.
 \item Boilerplate code: \textbf{excellent} - Actually, since its all flow-programming, there is no boilerplate code, which is very much appreciated !
 \end{itemize}
 
-\paragraph{Java} 
+\paragraph{Java}
 
 \begin{itemize}
 \item Server percentage: \textbf{0\%} - NodeRed is a full Javascript/NodeJS project.
@@ -816,9 +917,205 @@ Simply put, Node-RED is a model of connectivity/flexibility/modularity.
 
 \section{Summarized analysis}
 
+In order to ease the reading of the comparison tables, you will find below the color-correspondance table for appreciation-type criteria, from worst to best :
+
+\begin{center}
+\begin{tabular}{r|r|r|r|r}
+\cellcolor{red!25}non-existent & \cellcolor{orange!25}poor & \cellcolor{yellow!25}average & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
+\end{tabular}
+\end{center}
+
+For the other types of criteria, comparatively bad results are indicated in red, and good ones are indicated in green. If they are in-between, they are indicated in orange.
+
+If you haven't read the detailed analysis or the argumentation behind the evaluation criteria, please consider doing so if you think one of the values below surprises you.
+
+\subsection{General criteria}
+
+\paragraph{Project Health}
+
+\begin{center}
+\begin{tabular}{r|r|r|r|r|r}
+Solution & First Release & Last Release & Last Commit & Main Contr. & Open Issues Ratio \\ \hline
+SiteWhere & \cellcolor{green!25}2014/03/06 & \cellcolor{green!25}2017/06/19 & \cellcolor{green!25}2017/08/11 & \cellcolor{red!25}1 & \cellcolor{green!25}0.0534653465 \\
+Kaa & \cellcolor{green!25}2014/06/30 & \cellcolor{orange!25}2016/10/28 & \cellcolor{green!25}2017/06/31 & \cellcolor{green!25}10 & \cellcolor{green!25}0.0173032153 \\
+DeviceHive & \cellcolor{green!25}2013/09/19 & \cellcolor{green!25}2017/08/04 & \cellcolor{green!25}2017/08/17 & \cellcolor{green!25}6 & \cellcolor{red!25}0.3434343434 \\
+ZettaJS & \cellcolor{green!25}2014/07/23 & \cellcolor{green!25}2017/07/07 & \cellcolor{green!25}2017/07/07 & \cellcolor{orange!25}3 & \cellcolor{red!25}0.2565789474 \\
+Parse & \cellcolor{orange!25}2016/01/28 & \cellcolor{green!25}2017/07/03 & \cellcolor{green!25}2017/08/18 & \cellcolor{orange!25}4 & \cellcolor{green!25}0.0742424242 \\
+Blynk & \cellcolor{green!25}2015/06/09 & \cellcolor{green!25}2017/08/07 & \cellcolor{green!25}2017/08/15 & \cellcolor{orange!25}2 & \cellcolor{green!25}0.0295420975 \\
+Kapua & \cellcolor{red!25}2017/04/28 & \cellcolor{green!25}2017/08/11 & \cellcolor{green!25}2017/08/21 & \cellcolor{green!25}8 & \cellcolor{red!25}0.335243553 \\
+NodeRed & \cellcolor{green!25}2013/10/16 & \cellcolor{green!25}2017/07/23 & \cellcolor{green!25}2017/07/21 & \cellcolor{orange!25}2 & \cellcolor{orange!25}0.1063829787 \\
+\end{tabular}
+\end{center}
+
+\paragraph{} According to the table, we can see that most of the projects started around the same period, in 2013/2014, even Parse (before 2016, it was closed-source software). Only Blynk arrived a little bit later, and Kapua is an entirely new project.
+
+\paragraph{} All the projects seem still alive and well, as show their latest release and commit dates, though for Kaa, it is to be noted that they stopped their usual release cycle for the preparation of their 1.0 version, which should come by the end of summer 2017.
+
+\paragraph{} Kaa, DeviceHive and Kapua seem to have large team working on their core component, while the other projects are mainly maintained by 2 or 3 people. Worst of the list is SiteWhere, with only one main developer maintaining it: if he were to leave the project, it would stop alltogether.
+
+\paragraph{} DeviceHive, ZettaJS and Kapua have a rather high open issues ratio, for different reasons: for Kapua, it is because the project is still in its early phase, but for DeviceHive and ZettaJS, it seems to come from a lack of reactivity from the developper team.
+
+\paragraph{} \textbf{Overall, the three projects that seem to be in best health are Kaa, Blynk and Node-RED.}
+
+\newpage
+
+\paragraph{Company Backing}
+
+\begin{center}
+\begin{tabular}{r|r|r}
+Solution & Company Support & Company Adoption \\ \hline
+SiteWhere & \cellcolor{green!25}excellent & \cellcolor{blue!10}good \\
+Kaa & \cellcolor{blue!10}good & \cellcolor{yellow!25}average \\
+DeviceHive & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+ZettaJS & \cellcolor{blue!10}good & \cellcolor{yellow!25}average \\
+Parse & \cellcolor{orange!25}poor & \cellcolor{blue!10}good \\
+Blynk & \cellcolor{green!25}excellent & \cellcolor{green!25}excellent \\
+Kapua & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+NodeRed & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+\end{tabular}
+\end{center}
+
+\paragraph{} All projects have some kind of company-backing, ranging from dedicated companies to big companies that also develop many other solutions. However, Parse is a project that is clearly loosing its speed since the company behind it closed: it is now fully community-driven, which doesn't seem to be the best for its continuity.
+
+\paragraph{Documentation}
+
+\begin{center}
+\begin{tabular}{r|r|r}
+Solution & Currentness & Adaptability \\ \hline
+SiteWhere & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
+Kaa & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
+DeviceHive & \cellcolor{blue!10}good & \cellcolor{yellow!25}average \\
+ZettaJS & \cellcolor{yellow!25}average & \cellcolor{yellow!25}average \\
+Parse & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+Blynk & \cellcolor{yellow!25}average & \cellcolor{blue!10}good \\
+Kapua & \cellcolor{yellow!25}average & \cellcolor{yellow!25}average \\
+NodeRed & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
+\end{tabular}
+\end{center}
+
+\paragraph{} All projects have a relatively decent documentation, aside from ZettaJS and Kapua. ZettaJS's documentation hasn't been updated in a long while and is not as well-organised as the one of the others, and Kapua's lack in documentation can easily be explained by the young age of the project.
+
+\paragraph{UI-UX}
+
+\begin{center}
+\begin{tabular}{r|r|r}
+Solution & Server Management UI	& Sample applications \\ \hline
+SiteWhere & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+Kaa & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
+DeviceHive & \cellcolor{blue!10}good & \cellcolor{yellow!25}average \\
+ZettaJS & \cellcolor{yellow!25}average & \cellcolor{blue!10}good \\
+Parse & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+Blynk & \cellcolor{yellow!25}average & \cellcolor{blue!10}good \\
+Kapua & \cellcolor{yellow!25}average & \cellcolor{orange!25}poor \\
+NodeRed & \cellcolor{green!25}excellent & \cellcolor{blue!10}good \\
+\end{tabular}
+\end{center}
+
+\paragraph{} In terms of UI-UX, all projects come with rather decent proposals, except Kapua, which again, is probably mainly due to its young age.
+
+\newpage
+
+\subsection{IoT-specific criteria}
+
+\paragraph{Security}
+
+\begin{center}
+\begin{tabular}{r|r|r}
+Solution & Statements & Audits \\ \hline
+SiteWhere & \cellcolor{yellow!25}average & \cellcolor{red!25}non-existent \\
+Kaa & \cellcolor{green!25}excellent & \cellcolor{red!25}non-existent \\
+DeviceHive & \cellcolor{orange!25}poor & \cellcolor{red!25}non-existent \\
+ZettaJS & \cellcolor{orange!25}poor & \cellcolor{red!25}non-existent \\
+Parse & \cellcolor{blue!10}good & \cellcolor{red!25}non-existent \\
+Blynk & \cellcolor{yellow!25}average & \cellcolor{red!25}non-existent \\
+Kapua & \cellcolor{yellow!25}average & \cellcolor{red!25}non-existent \\
+NodeRed & \cellcolor{blue!10}good & \cellcolor{orange!25}poor \\
+\end{tabular}
+\end{center}
+
+\paragraph{} Security is the criteria where the difference is clearly made between the solutions.
+
+\paragraph{} DeviceHive and ZettaJS don't give much clues about the security procedures they implement, which may hint at a bad design, and Sitewhere, Blynk and Kapua, while they do give details about their security architecture, these are not quite as satisfying as those found for Parse or Node-RED. Kaa definitely shines most among its brothers in terms of security architecture, and truly shows an appropriate interest for security concerns.
+
+\paragraph{} \textbf{However, none of the solutions have ever been submitted to a true security audit realized by an independent entity. Which is quite stunning (and not in a good way) considering the importance of security in IoT systems, especially if they contain actuators.}
+
+\paragraph{Connectivity/Flexibility}
+
+\begin{center}
+\begin{tabular}{r|r|r|r|r}
+Solution & Hardware platforms & Supported protocols & SDK implementations & Modularity \\ \hline
+SiteWhere & \cellcolor{orange!25}4 & \cellcolor{green!25}7 & \cellcolor{orange!25}2 & \cellcolor{blue!10}good \\
+Kaa & \cellcolor{green!25}8 & \cellcolor{red!25}1 & \cellcolor{green!25}5 & \cellcolor{green!25}excellent \\
+DeviceHive & \cellcolor{red!25}2 & \cellcolor{orange!25}3 & \cellcolor{orange!25}2 & \cellcolor{yellow!25}average \\
+ZettaJS & \cellcolor{green!25}11 & \cellcolor{red!25}1 & \cellcolor{red!25}1 & \cellcolor{blue!10}good \\
+Parse & \cellcolor{orange!25}3 & \cellcolor{red!25}1 & \cellcolor{green!25}7 & \cellcolor{orange!25}poor \\
+Blynk & \cellcolor{green!25}400+ & \cellcolor{orange!25}2 & \cellcolor{orange!25}2 & \cellcolor{orange!25}poor \\
+Kapua & \cellcolor{red!25}1 & \cellcolor{red!25}1 & \cellcolor{red!25}0 & \cellcolor{orange!25}poor \\
+NodeRed & \cellcolor{green!25}17+ & \cellcolor{orange!25}2 & \cellcolor{orange!25}2 & \cellcolor{green!25}excellent \\
+\end{tabular}
+\end{center}
+
+\paragraph{} The connectivity/flexibility of a solution is one of the hardest things to assess. Indeed, each solution provides its own way of communicating with third-party devices or softwares, with their very own vocabulary and paradigm. Thus the estimations given here need reading the detailed analysis to fully understand their meaning, and why, for example, Blynk and Kaa both deserve the "excellent" appreciation for their number of compatible Hardware Platforms, though one boasts more than 400, and the other, "only" 8.
+
+\paragraph{} In terms of connectivity, the platforms that shine most are: Blynk for its concern about hardware, Sitewhere for its support of a great many communication protocols, Kaa and Parse for their excellent number of provided SDK, and Node-RED + Kaa for their excellent Modularity.
+
+\paragraph{} \textbf{Overall, Kaa seems to be the best option in terms of connectivity, flexibility and modularity.}
+
+\paragraph{Scalability}
+
+\begin{center}
+\begin{tabular}{r|r|r}
+Solution & Third-Party scalability & Platform scalability \\ \hline
+SiteWhere & \cellcolor{blue!10}good & \cellcolor{orange!25}poor \\
+Kaa & \cellcolor{green!25}excellent & \cellcolor{green!25}excellent \\
+DeviceHive & \cellcolor{green!25}excellent & \cellcolor{yellow!25}average \\
+ZettaJS & \cellcolor{orange!25}poor & \cellcolor{orange!25}poor \\
+Parse & \cellcolor{yellow!25}average & \cellcolor{orange!25}poor \\
+Blynk & \cellcolor{yellow!25}average & \cellcolor{orange!25}poor \\
+Kapua & \cellcolor{yellow!25}average & \cellcolor{orange!25}poor \\
+NodeRed & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+\end{tabular}
+\end{center}
+
+\paragraph{} Though more or less all the platforms presented here claim to be scalable, only a few truly exposed what made them so. While Node-RED and DeviceHive seemed to offer a decent reflexion on the question, \textbf{only Kaa presented a full-fledged approach to scalability, with integrated data distribution, inter-instance communication, and load-balancing}.
+
+\subsection{Application-specific criteria}
+
+\begin{center}
+\begin{tabular}{r|r|r|r}
+Solution & Arduino Library & Arduino Boilerplate Code & Java Server Percentage \\ \hline
+SiteWhere & \cellcolor{blue!10}good & \cellcolor{blue!10}good & \cellcolor{green!25}81.8 \\
+Kaa & \cellcolor{blue!10}good & \cellcolor{blue!10}good & \cellcolor{green!25}69.9 \\
+DeviceHive & \cellcolor{yellow!25}average & \cellcolor{blue!10}good & \cellcolor{green!25}97.2 \\
+ZettaJS & \cellcolor{orange!25}poor & \cellcolor{orange!25}poor & \cellcolor{red!25}0 \\
+Parse & \cellcolor{yellow!25}average & \cellcolor{blue!10}good & \cellcolor{red!25}0 \\
+Blynk & \cellcolor{green!25}excellent & \cellcolor{green!25}excellent & \cellcolor{green!25}96.9 \\
+Kapua & \cellcolor{red!25}non-existent & \cellcolor{red!25}non-existent & \cellcolor{green!25}91.8 \\
+NodeRed & \cellcolor{yellow!25}average & \cellcolor{green!25}excellent & \cellcolor{red!25}0 \\
+\end{tabular}
+\end{center}
+
+\paragraph{} Finally, come the very subjective criteria on Arduino compatibility and Java composition.
+
+\paragraph{} Since ZettaJS, Parse and Node-RED are full-javascript solutions, they will not be retained as final solutions here. The lower Java percentages for Sitewhere and Kaa are simply explained by the presence of HTML for the web-ui, and in the case of Kaa, by the presence of Client-side code in the main project repository, where all the server code is situated.
+
+\paragraph{} For the others, only SiteWhere, Kaa and most importantly, Blynk offer a decent Arduino/NodeMCU/ESP8266 support. The other ones either provide a lacking implementation, or as for Kapua, no implementation at all.
+
 \newpage
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{\protect\numberline{}Conclusion}%
+
+\paragraph{} Finally, this report allows us to conclude on several things:
+
+\begin{itemize}
+\item There are quite a few very decent FOSS IoT middleware cloud platforms out there, and some of them are actually used for production already, mainly by the companies that develop them.
+\item Each of these solutions has a different approach and specific functionnalities, that may not have been all described here, but the aim of this review was to find common points of comparison.
+\item While the final choice will go for a Java-based solution in the OCCIware case, it does not mean at all that the NodeJS-based solutions are uninteresting, especially Node-RED, which brings in a passionating abstraction layer.
+\item Kapua might become a very interesting choice in the future, but the project is far from mature right now.
+\item DeviceHive and SiteWhere are two very interesting solutions, but their apparent lack of real scalability and concern for security make them less appealing in the end.
+\end{itemize}
+
+\paragraph{} In the end, the final choice for the OCCIware project would clearly be the \href{https://www.kaaproject.org/}{Kaa Project}, if not for the time and resource constraints of the LinkedData Demonstration: if the 1.0 version were available at the time of this writing, and it would be possible for the project to run on slightly lower base specifications (\href{https://kaaproject.github.io/kaa/docs/v0.10.0/Getting-started/#sandbox-installation}{minimum 4Gb of RAM}), it would definitely have been the go-to choice. So, \textbf{while Kaa is the platform that would be recommended at the end of this report}, we shall go with a Blynk instance for the meantime, notably for its very good prototyping qualities that will allow us to more quickly complete the demonstration.
 
 \end{document}

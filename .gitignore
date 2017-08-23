@@ -3,4 +3,6 @@
 *.out
 *.gz
 *.toc
+*.blg
+*.bbl
 *.ods#
