@@ -1066,7 +1066,7 @@ NodeRed & \cellcolor{blue!10}good & \cellcolor{orange!25}poor \\
 
 \paragraph{} Security is the criteria where the difference is clearly made between the solutions.
 
-\paragraph{} DeviceHive and ZettaJS don't give much clues about the security procedures they implement, which may hint at a bad design, and Sitewhere, Blynk and Kapua, while they do give details about their security architecture, these are not quite as satisfying as those found for Parse or Node-RED. Kaa definitely shines most among its brothers in terms of security architecture, and truly shows an appropriate interest for security concerns.
+\paragraph{} DeviceHive and ZettaJS don't give much clues about the security procedures they implement. Sitewhere, Blynk and Kapua, while they do give details about their security architecture, these are not quite as satisfying as those found for Parse or Node-RED. Kaa definitely shines most among its brothers in terms of security architecture, and truly shows an appropriate interest for security concerns.
 
 \paragraph{} \textbf{However, none of the solutions have ever been submitted to a true security audit realized by an independent entity. Which is quite stunning (and not in a good way) considering the importance of security in IoT systems, especially if they contain actuators.}
 
@@ -1144,7 +1144,7 @@ NodeRed & \cellcolor{yellow!25}average & \cellcolor{green!25}excellent & \cellco
 \item Each of these solutions has a different approach and specific functionnalities, that may not have been all described here, but the aim of this review was to find common points of comparison.
 \item While the final choice will go for a Java-based solution in the OCCIware case, it does not mean at all that the NodeJS-based solutions are uninteresting, especially Node-RED, which brings in a passionating abstraction layer.
 \item Kapua might become a very interesting choice in the future, but the project is far from mature right now.
-\item DeviceHive and SiteWhere are two very interesting solutions, but their apparent lack of real scalability and concern for security make them less appealing in the end.
+\item DeviceHive and SiteWhere are two very interesting solutions, but the lack of documentation about security precautions for the first, and apparent lack of real scalability for the second make them less appealing for the moment.
 \end{itemize}
 
 \paragraph{} In the end, the final choice for the OCCIware project would clearly be the \href{https://www.kaaproject.org/}{Kaa Project}, if not for the time and resource constraints of the LinkedData Demonstration: if the 1.0 version were available at the time of this writing, and it would be possible for the project to run on slightly lower base specifications (\href{https://kaaproject.github.io/kaa/docs/v0.10.0/Getting-started/#sandbox-installation}{minimum 4Gb of RAM}), it would definitely have been the go-to choice. So, \textbf{while Kaa is the platform that would be recommended at the end of this report}, we shall go with a Blynk instance for the meantime, notably for its very good prototyping qualities that will allow us to more quickly complete the demonstration.
