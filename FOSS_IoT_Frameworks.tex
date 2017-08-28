@@ -12,6 +12,10 @@
     right=3cm
 ]{geometry}
 
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
 \title{%
   FOSS IoT Frameworks review \\
   - \\
@@ -19,9 +23,36 @@
 \author{Benoit RENAULT for \href{http://www.smile.fr/Smile-lab}{SmileLab}}
 \date{2017/08/23}
 
+\lhead{FOSS IoT Frameworks review}
+\chead{}
+\rhead{OCCIware - LDaaS use case}
+\lfoot{\href{https://creativecommons.org/licenses/by-sa/4.0/}{(CC BY-SA 4.0)} \ \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{Benoit RENAULT} 2017.}
+\cfoot{}
+\rfoot{\thepage\ of \pageref{LastPage}}
+
 \begin{document}
 
 \maketitle
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=50mm]{OCCIware_logo_color_1023x383.png}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=50mm]{Smile-lab.png}
+\end{figure}
+
+\paragraph{Project Introduction and background:}
+
+\paragraph{} OCCIware provides a unique and comprehensive framework, from model to code execution, for modeling, designing, developing, testing, deploying and running every computing resource as a service. OCCIware leverages the the Open Grid Forum (OGF) Open Cloud Computing Interface (OCCI) standard recommendation to address the lack of unified cloud computing standard. The OCCIware framework allows programmers to develop cloud applications faster through an integrated tool chain built on the OCCI standard. OCCIware provides a formal, consistent, and comprehensive specification for the OCCI standard thus making it the first cloud computing standard formally specified. OCCIware helps cloud consumers to avoid technology and vendor lock-in by providing them with a single, unified and standard approach, whatever cloud provider they rely on and whichever cloud computing layer positioning they have.
+
+\paragraph{} OCCIware originated as a collaborative project supported financially by the \textbf{French Fonds National pour la Société Numérique (FSN)}.
+
+\paragraph{} The partners of the OCCIware project are: \href{http://www.smile.fr/}{Smile (project coordinator)}, \href{https://www.activeeon.com/}{ActiveEon}, \href{https://www.inria.fr/en/}{Inria}, \href{https://linagora.com/}{Linagora}, \href{https://www.obeo.fr/en/}{Obeo}, \href{https://www.ow2.org/bin/view/Main/}{OW2}, \href{Université Grenoble Alpes}{Université Grenoble Alpes}, \href{https://www.scalair.fr/}{Scalair}, \href{http://www.telecom-sudparis.eu/}{Telecom Sud Paris}.
+
+\newpage
 
 \tableofcontents
 
@@ -34,7 +65,7 @@
 
 \paragraph{} \emph{Please note that, while the evaluation criteria themselves may be considered timeless, the analyses presented below only reflect the state of the different projects as of this document's last update date, written on the first page.}
 
-\paragraph{} \textbf{The criteria are mainly chosen so that each solution needs not be analyzed more than three hours, and only by consulting the website, the documentation and the project's repository, never actually executing the project.}
+\paragraph{} \textbf{The criteria are mainly chosen so that each solution needs not be analyzed more than three hours, and only by consulting the website, the documentation and the project's repository, never actually executing the project. All of the project's team have then been contacted for fact-checking, and when precisions have been given in the discussion that are not found in the documentation, they will be presented as such.}
 
 \paragraph{} If you spot a mistake or confusion within the document, please don't hesitate to either open a Github issue on \href{https://github.com/Xia0ben/FOSS_IoT_Frameworks}{the source repository} or directly fork it, modify your clone, and make a pull-request for the author to easily merge your modifications if deemed appropriate.
 
@@ -850,7 +881,7 @@ The project is in rather good health, aside from the fact the two main developer
 
 \begin{itemize}
 \item Company Support: \textbf{good} - Node-RED was originally developed as a side-project by two members of the IBM’s Emerging Technology Services team and is now a part of the JS Foundation, of which IBM is one of the founding members. It is unclear whether IBM still finances the project, but it is clear that its main two developpers do commit a lot of their time to the project, and when they are not available, the very strong community fills in the GAP for support. However, there seem to be no clear company support offer, like a direct line to the devs through email or phone.
-\item Company Adoption: \textbf{good} - According to \href{https://nodered.org/blog/2016/10/17/js-foundation}{this blog post}, companies such as \href{https://fred.sensetecnic.com/}{SenseTecnic}, \href{https://flow.att.com/}{AT\&T} and \href{https://www.redconnect.io/}{Red Ant} provide Node-RED services. Even though the software still hasn't released a 1.0 version, it seems rather trusted and well-known in the IoT industry. It also seems they have a partnership with the RaspberryPi foundation, since Node-RED is now available by default on every new RaspberryPi device.
+\item Company Adoption: \textbf{excellent} - According to \href{https://nodered.org/blog/2016/10/17/js-foundation}{this blog post}, companies such as \href{https://fred.sensetecnic.com/}{SenseTecnic}, \href{https://flow.att.com/}{AT\&T} and \href{https://www.redconnect.io/}{Red Ant} provide Node-RED services. Even though the software still hasn't released a 1.0 version, it seems rather trusted and well-known in the IoT industry. It also seems they have a partnership with the RaspberryPi foundation, since Node-RED is now available by default on every new RaspberryPi device. Hitachi also made a \href{http://www.prweb.com/releases/2017/08/prweb14579081.htm}{recent announcement} on their adoption of Node-RED.
 \end{itemize}
 
 Even though the project's governance is \href{https://nodered.org/about/governance/}{clearly willed to be community-driven}, the company-backing doesn't look half-bad, with some big names trusting the project.
@@ -886,7 +917,7 @@ It seems that the people behind Node-RED do care about security, though there se
 
 \begin{itemize}
 \item Number of compatible hardware platforms: \textbf{17+} - According to \href{https://github.com/node-red/node-red-nodes}{the list of nodes in this repository}, there are already 17 hardware platforms that benefit of a node, but since it doesn't even include the arduino one, we can safely assume there are many more that are reported in this list.
-\item Number of supported protocols: \textbf{2} - It seems that Node-RED is essentially capable of HTTP and MQTT interactions (actually, \href{https://nodered.org/about/}{its roots come from this second protocol}).
+\item Number of supported protocols: \textbf{5} - As node-red is a platform that can be extended through custom nodes, it can support any protocol that exists for which someone has created a node. However if we focus on network protocols, the default core palette has nodes for: MQTT (actually, \href{https://nodered.org/about/}{its roots come from this protocol}), HTTP, WebSockets as well as raw TCP and UDP.
 \item Number of SDK implementations: \textbf{2} - Let's say that the Node-RED interface makes one since it can be used \href{https://nodered.org/docs/platforms/android}{on phones} as well. To that we can add the \href{https://github.com/node-red/node-red-dashboard}{provided web-based dashboard}.
 \item Modularity: \textbf{excellent} - Thanks to its "node"-paradigm, Node-RED can easily integrate just about any component, already including three DBs (LevelDB, MySQL, SQLite) for example.
 \end{itemize}
@@ -971,7 +1002,7 @@ ZettaJS & \cellcolor{blue!10}good & \cellcolor{yellow!25}average \\
 Parse & \cellcolor{orange!25}poor & \cellcolor{blue!10}good \\
 Blynk & \cellcolor{green!25}excellent & \cellcolor{green!25}excellent \\
 Kapua & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
-NodeRed & \cellcolor{blue!10}good & \cellcolor{blue!10}good \\
+NodeRed & \cellcolor{blue!10}good & \cellcolor{green!25}excellent \\
 \end{tabular}
 \end{center}
 
@@ -1051,7 +1082,7 @@ ZettaJS & \cellcolor{green!25}11 & \cellcolor{red!25}1 & \cellcolor{red!25}1 & \
 Parse & \cellcolor{orange!25}3 & \cellcolor{red!25}1 & \cellcolor{green!25}7 & \cellcolor{orange!25}poor \\
 Blynk & \cellcolor{green!25}400+ & \cellcolor{orange!25}2 & \cellcolor{orange!25}2 & \cellcolor{orange!25}poor \\
 Kapua & \cellcolor{red!25}1 & \cellcolor{red!25}1 & \cellcolor{red!25}0 & \cellcolor{orange!25}poor \\
-NodeRed & \cellcolor{green!25}17+ & \cellcolor{orange!25}2 & \cellcolor{orange!25}2 & \cellcolor{green!25}excellent \\
+NodeRed & \cellcolor{green!25}17+ & \cellcolor{green!25}5 & \cellcolor{orange!25}2 & \cellcolor{green!25}excellent \\
 \end{tabular}
 \end{center}
 
