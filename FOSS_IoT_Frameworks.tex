@@ -387,8 +387,8 @@ Main Selling Point & Many integrations \\ \hline
 
 \begin{itemize}
 \item First Release Date: \textbf{2013/09/19} - The first release fo the server software has been made in 2013, though, on the corporate website, the copyright indicates an existence starting in 2012. The project has undergone big changes at its beginning, switching from .NET to Java, according to \href{http://www.techrepublic.com/blog/tablets-in-the-enterprise/devicehive-an-open-source-m2m-development-platform/}{this article}.
-\item Latest Release Date: \textbf{2017/08/04} - The last release is very recent, meaning it still actively supported. The project has an irregular release cycle, "When it's ready"-Debian-like.
-\item Latest Commit Date: \textbf{2017/08/17} - As of the writing of this report, commits are made daily on the development branches: we can thus deduce that the project is still undergoing developments.
+\item Latest Release Date: \textbf{2017/08/04} - The last release is very recent, meaning it still actively supported. Though the project previously had an irregular release cycle, "When it's ready"-Debian-like, the team declared in an email that they were now aiming for a bi-weekly release cycle.
+\item Latest Commit Date: \textbf{2017/08/17} - As of the writing of this report, commits are made daily on the development branches: we can thus deduce that the project is still undergoing developments. This hypothesis is confirmed by the email from the team, which mentions that the project restarted undergoing big development 4 months before this review was made.
 \item Number of main contributors: \textbf{5} - It seems that two of the original contributors of the project do not contribute anymore to the server: maybe they ended up managing it. Anyway, the code base seems rather shared among a few people, which is good. A total of 30 persons have contributed to the project, which means there is a mild interest from the FOSS IoT community.
 \item Open issues ratio: \textbf{0.3434343434} - The project doesn't seem to use Github issues a lot: since its creation on Github, only 99 issues have been created and 34 are still open to this day.
 \end{itemize}
@@ -421,7 +421,7 @@ Overall, DeviceHive has good company backing, though the community aspect of the
 \paragraph{Security}
 
 \begin{itemize}
-\item Statements: \textbf{poor} - No statements on security whatsoever. It is not even clearly documented what they use for authentication, encryption and signing. Nothing on the corporate website, nothing in the documentation, except an API for authentification which means there is something, but that's it.
+\item Statements: \textbf{poor} - No statements on security except short mentions of the use of JWT for authentication. It is not clearly documented what they use for encryption and signing. However, in an email from the development team, it was stated that the project supports SSL over WebSocket and HTTP for encryption + JWT for authentication, which is good practice.
 \item Audits: \textbf{non-existent} - No mention on the product website, neither found any through a quick search on the web.
 \end{itemize}
 
@@ -441,8 +441,8 @@ The connectivity and flexibility of DeviceHive seems in fact rather poor overall
 \paragraph{Scalability}
 
 \begin{itemize}
-\item Third-Party scalability: \textbf{excellent} - The scalability of the components named above (ElasticSearch, Apache Spark, Cassandra and Kafka) is very good, as they were all designed for this.
-\item Platform scalability: \textbf{good} - DeviceHive uses a container based service oriented architecture approach, managed and orchestrated by Kubernetes. This takes advantage of the inherent capabilities of Docker, but it is not mentioned how the different DeviceHive instances might interact (as their is no Architecture overview in the documentation!).
+\item Third-Party scalability: \textbf{excellent} - The scalability of the components named above (ElasticSearch, Apache Spark, Cassandra and Kafka) is very good, as they were all designed for this. Furthermore, the project's aims at further decoupling these components and offer a pluggable architecture, according to the roadmap the team sent with their e-mail.
+\item Platform scalability: \textbf{good} - DeviceHive uses a container based micro-service oriented architecture approach, managed and orchestrated by Kubernetes, with scalability in mind. You can individually scale each of the internal server components horizontally to serve the load thanks to the Kubernetes deployment.
 \end{itemize}
 
 The approach DeviceHive takes to scalability definitely is interesting, but also cruely lacks documentation.
